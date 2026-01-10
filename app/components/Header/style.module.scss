@@ -1,0 +1,77 @@
+.header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  pointer-events: none;
+  /* Let clicks pass through except for interactive elements */
+
+  .logo {
+    pointer-events: auto;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    z-index: 11;
+  }
+
+  .button {
+    pointer-events: auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 100; /* Higher than nav panel */
+    border: none;
+    outline: none;
+
+    /* Burger Icon */
+    .burger {
+      width: 100%;
+      position: relative;
+      z-index: 1;
+
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 40%;
+        margin: auto;
+        background-color: white;
+        position: relative;
+        transition: transform 0.3s;
+      }
+
+      &::after {
+        top: -5px;
+      }
+
+      &::before {
+        top: 5px;
+      }
+    }
+
+    &.isActive {
+      .burger {
+        &::after {
+          transform: rotate(45deg);
+          top: -1px;
+        }
+        &::before {
+          transform: rotate(-45deg);
+          top: 0px;
+        }
+      }
+    }
+  }
+}

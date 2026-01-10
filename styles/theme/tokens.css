@@ -1,0 +1,87 @@
+@theme {
+  /* Fonts */
+  --font-pp: "pp_neue_montreal", sans-serif;
+  --font-oswald: "oswald", sans-serif;
+
+  /* Web */
+  --web-display-size: 225px;
+  --web-display-weight: 600;
+  --web-display-line-height: 225px;
+  --web-display-tracking: -0.02em;
+
+  --web-h1-size: 61px;
+  --web-h1-weight: 600;
+  --web-h1-line-height: 61px;
+  --web-h1-tracking: -0.02em;
+
+  --web-h2-size: 48px;
+  --web-h2-weight: 600;
+  --web-h2-line-height: 48px;
+  --web-h2-tracking: -0.02em;
+
+  --web-h3-size: 40px;
+  --web-h3-weight: 600;
+  --web-h3-line-height: 40px;
+  --web-h3-tracking: -0.02em;
+
+  --web-h4-size: 32px;
+  --web-h4-weight: 600;
+  --web-h4-line-height: 32px;
+  --web-h4-tracking: -0.02em;
+
+  --web-h5-size: 24px;
+  --web-h5-weight: 600;
+  --web-h5-line-height: 24px;
+  --web-h5-tracking: -0.02em;
+
+  --web-h6-size: 20px;
+  --web-h6-weight: 600;
+  --web-h6-line-height: 20px;
+  --web-h6-tracking: -0.02em;
+
+  --web-body-size: 16px;
+  --web-body-weight: 400;
+  --web-body-line-height: 24px;
+  --web-body-tracking: -0.02em;
+
+  /* Mobile */
+  --mobile-display-size: 64px;
+  --mobile-display-weight: 600;
+  --mobile-display-line-height: 64px;
+  --mobile-display-tracking: -0.02em;
+
+  --mobile-h1-size: 32px;
+  --mobile-h1-weight: 600;
+  --mobile-h1-line-height: 32px;
+  --mobile-h1-tracking: -0.02em;
+
+  --mobile-h2-size: 28px;
+  --mobile-h2-weight: 600;
+  --mobile-h2-line-height: 28px;
+  --mobile-h2-tracking: -0.02em;
+
+  --mobile-h3-size: 25px;
+  --mobile-h3-weight: 600;
+  --mobile-h3-line-height: 25px;
+  --mobile-h3-tracking: -0.02em;
+
+  --mobile-h4-size: 22px;
+  --mobile-h4-weight: 600;
+  --mobile-h4-line-height: 22px;
+  --mobile-h4-tracking: -0.02em;
+
+  --mobile-h5-size: 20px;
+  --mobile-h5-weight: 600;
+  --mobile-h5-line-height: 20px;
+  --mobile-h5-tracking: -0.02em;
+
+  --mobile-h6-size: 18px;
+  --mobile-h6-weight: 600;
+  --mobile-h6-line-height: 18px;
+  --mobile-h6-tracking: -0.02em;
+
+  --mobile-body-size: 16px;
+  --mobile-body-weight: 400;
+  --mobile-body-line-height: 24px;
+  --mobile-body-tracking: -0.02em;
+}
