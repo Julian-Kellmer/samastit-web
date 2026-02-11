@@ -4,9 +4,9 @@
   --font-oswald: "oswald", sans-serif;
 
   /* Web */
-  --web-display-size: 225px;
+  --web-display-size: 195px;
   --web-display-weight: 600;
-  --web-display-line-height: 225px;
+  --web-display-line-height: 175px;
   --web-display-tracking: -0.02em;
 
   --web-h1-size: 61px;

@@ -50,12 +50,15 @@ export default function HorizontalScrollSection() {
         {/* Panel 1: Hero Title + Description */}
         <div className='relative panel w-full h-screen md:w-[120svw] md:h-screen flex-shrink-0 flex items-center justify-center p-8 border-b md:border-b-0 md:border-r border-white/5'>
           <div className='w-full h-[80%] grid grid-cols-1 md:grid-cols-2 gap-12 items-start pt-32 md:pt-0 md:items-end z-10'>
-            <div>
-              <h1 className='text-display text-5xl md:text-9xl font-bold uppercase leading-[0.85] tracking-tighter text-red-600'>
+            <div className='flex flex-col justify-end'>
+              <h1 className='text-display uppercase  text-red-600'>
                 GUÍA
                 <br />
                 REALIZADOR
               </h1>
+              <p className='text-body px-3'>
+                La práctica de intervenir tu energía
+              </p>
             </div>
           </div>
           <div className='absolute flex justify-end items-end top-0 left-0 w-full h-screen pointer-events-none'>
@@ -74,9 +77,11 @@ export default function HorizontalScrollSection() {
         <div className='p-8 md:p-16 panel w-full min-h-screen md:w-[80svw] md:h-screen flex-shrink-0 flex flex-col items-start justify-center border-b md:border-b-0 border-white/5'>
           <div className='py-8 md:py-16 flex-1 flex items-start w-full max-w-5xl text-start'>
             <p className='text-h4 text-2xl md:text-4xl'>
-              Luego de 20 años Practicando y enseñando yoga hoy propongo una
-              forma clara, accesible y adaptable de practicar e intervenir tu
-              energia. Hoy propongo...
+              Después de 27 años practicando y enseñando yoga, hoy comparto una
+              forma clara, accesible y adaptable de trabajar con tu energía.{' '}
+              <br />
+              También diseño y forjo amuletos energéticos: piezas creadas a mano
+              que acompañan procesos personales de transformación.
             </p>
           </div>
           <div className='flex flex-col md:flex-row w-full items-center justify-between gap-8 md:gap-0'>
@@ -98,13 +103,13 @@ export default function HorizontalScrollSection() {
 
             <div className='flex w-full md:max-w-[50%] items-start flex-col gap-4'>
               <p className='text-body'>
-                Viajé durante diez años a la India, donde estudié con varios
-                maestros y, en Mysore, con Sri K.{' '}
+                Viajé durante diez años a la India, donde estudié con diferentes
+                maestros y, en Mysore, con Sri K. Pattabhi Jois y Sharath
+                Rangaswami.
               </p>
               <p className='text-body'>
-                Pattabhi Jois y Sharath Rangaswami, quienes me dieron la
-                bendición para enseñar Ashtanga yoga —siendo el primer argentino
-                en recibirla{' '}
+                Fui el único argentino que practicó en Mysore con Pattabhi Jois
+                y que realizó el curso para profesores con Sharath.
               </p>
             </div>
           </div>
@@ -118,8 +123,8 @@ export default function HorizontalScrollSection() {
                 SAMASTIT
               </h2>
               <h4 className='text-h4 px-4'>
-                “Tu equilibrio es una habilidad y se puede entrenar con
-                práctica.”
+                “Samastit es una práctica de yoga creada para que encuentres tu
+                equilibrio
               </h4>
             </div>
           </div>
