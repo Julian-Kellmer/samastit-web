@@ -42,12 +42,12 @@ export default function Footer() {
               <Link
                 href='/meliquina'
                 className='hover:text-white/70 transition-colors text-[16px]'>
-                Experiencia meliquina
+                Meliquina
               </Link>
               <Link
                 href='/ashtanga'
                 className='hover:text-white/70 transition-colors text-[16px]'>
-                Metodo Ashtanga
+                Ashtanga
               </Link>
             </div>
 
@@ -62,12 +62,12 @@ export default function Footer() {
               <Link
                 href='/joyas'
                 className='hover:text-white/70 transition-colors text-[16px]'>
-                Comprar Joyas
+                Amuletos Disponibles
               </Link>
               <Link
                 href='/videos'
                 className='hover:text-white/70 transition-colors text-[16px]'>
-                Comprar videos
+                Curso Ashtanga
               </Link>
             </div>
 

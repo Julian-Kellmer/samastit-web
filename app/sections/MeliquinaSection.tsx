@@ -23,7 +23,7 @@ export default function MeliquinaSection() {
         {/* Header Content */}
         <div className='col-span-full md:col-start-2 md:col-end-12 flex flex-col items-start gap-8 mb-12'>
           <h2 className='text-[3rem] md:text-[8rem] text-primary uppercase font-bold tracking-tighter leading-none font-oswald'>
-            EXP.MELIQUINA
+            MELIQUINA
           </h2>
 
           <div className='flex flex-col md:flex-row gap-12 justify-between items-end w-full'>
@@ -33,14 +33,7 @@ export default function MeliquinaSection() {
                 montaña te conquiste a ti
               </h3>
               <p className='text-body text-white/70 max-w-2xl'>
-                Complementando la práctica, ofrezco un espacio natural único en
-                Meliquina, Patagonia Argentina. Este entorno, construido de
-                manera consciente, es el contenedor ideal para experiencias
-                profundas: desde estancias personales, donde cada persona se
-                conecta con el medio natural según sus propias necesidades,
-                hasta retiros de inmersión Samastit y alquileres para terapeutas
-                o facilitadores afines que busquen un lugar que potencie su
-                trabajo.
+                Como extensión de la práctica, creé un espacio natural en Villa Lago Meliquina, Patagonia Argentina. Rodeado de bosque autóctono, con agua de vertiente y energía solar, el lugar fue concebido como un contenedor para procesos profundos: retiros, estancias personales y alquiler para facilitadores, terapeutas y artistas que buscan un entorno de silencio, concentración y creación
               </p>
             </div>
 

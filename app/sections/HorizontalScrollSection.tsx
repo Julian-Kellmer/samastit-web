@@ -48,7 +48,7 @@ export default function HorizontalScrollSection() {
         ref={track}
         className='flex flex-col md:flex-row md:flex-nowrap w-full md:w-[300vw] h-auto md:h-full'>
         {/* Panel 1: Hero Title + Description */}
-        <div className='relative panel w-full h-screen md:w-[120svw] md:h-screen flex-shrink-0 flex items-center justify-center p-8 border-b md:border-b-0 md:border-r border-white/5'>
+        <div className='relative panel w-full h-screen md:w-[120svw] md:h-screen flex-shrink-0 flex items-center justify-center p-8 border-b md:border-b-0 border-white/5'>
           <div className='w-full h-[80%] grid grid-cols-1 md:grid-cols-2 gap-12 items-start pt-32 md:pt-0 md:items-end z-10'>
             <div className='flex flex-col justify-end'>
               <h1 className='text-display uppercase  text-red-600'>
@@ -62,9 +62,9 @@ export default function HorizontalScrollSection() {
             </div>
           </div>
           <div className='absolute flex justify-end items-end top-0 left-0 w-full h-screen pointer-events-none'>
-            <div className='imga-contain relative h-[50svh] md:h-[80svh] w-full md:w-[65svw]'>
+            <div className='imga-contain relative h-[50svh] md:h-screen w-full md:w-[65svw]'>
               <Image
-                src='/images/PP.png'
+                src='/images/FondoEspalada.png'
                 alt='Hero Image'
                 fill
                 className='object-contain object-bottom md:object-right-bottom'
@@ -123,8 +123,7 @@ export default function HorizontalScrollSection() {
                 SAMASTIT
               </h2>
               <h4 className='text-h4 px-4'>
-                “Samastit es una práctica de yoga creada para que encuentres tu
-                equilibrio
+                Samastit es una práctica de yoga creada para que encuentres tu equilibrio
               </h4>
             </div>
           </div>

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import SamastitCard from '../samastit/_components/SamastitCard'
-import {FxLinkButton} from '../components/FxButton/FxLinkButton'
+import { FxLinkButton } from '../components/FxButton/FxLinkButton'
 
 export default function AmuletosSection() {
   return (
@@ -41,10 +41,28 @@ export default function AmuletosSection() {
 
             <p className='text-body text-white/70 pl-6'>
               Los Amuletos{' '}
+              <span className='text-primary font-bold'>Samastit</span>{' '}
+              materializan una intención. Interaccionan con el cuerpo y el campo
+              energético, generando un punto de orden y conducción. Pueden
+              integrarse a una práctica o acompañar de manera autónoma a quien
+              elige trabajar su energía desde lo cotidiano.
+            </p>
+            <p className='text-body text-white/70 pl-6'>
+              Los Amuletos{' '}
               <span className='text-primary font-bold'>Samastit</span> son
-              herramientas de consciencia. Son piezas que se transforman en
-              puente entre tu práctica y la vida diaria, a través de la
-              intención.
+              herramientas de conciencia. Actúan como puntos de conducción entre
+              el cuerpo y el entorno, acompañando procesos personales más allá
+              de una práctica específica. Son piezas que sostienen intención y
+              presencia en lo cotidiano.
+            </p>
+            <p className='text-body text-white/70 pl-6'>
+              Los Amuletos{' '}
+              <span className='text-primary font-bold'>Samastit</span> son
+              herramientas de conciencia. Piezas diseñadas para interactuar con
+              el cuerpo y el campo personal, ayudando a sostener presencia,
+              intención y orden energético en la vida diaria. Pueden acompañar
+              una práctica, pero también funcionar por sí mismos como
+              recordatorios materiales de una frecuencia interna.
             </p>
           </div>
 
@@ -62,7 +80,7 @@ export default function AmuletosSection() {
           <div className='container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 md:mb-32 max-w-6xl'>
             <SamastitCard
               title='Oro'
-              description='Patrones de tensión y desequilibrio.'>
+              description='Centro y reorganización. Trabaja sobre tensiones y favorece equilibrio interno.'>
               {/* Abstract Lines Icon Placeholder */}
               <svg
                 className='w-16 h-16'
@@ -76,7 +94,7 @@ export default function AmuletosSection() {
 
             <SamastitCard
               title='Plata'
-              description='Afina la intuicion y calma la mente.'>
+              description='Afinación y claridad. Favorece calma mental y sensibilidad perceptiva.'>
               {/* Dots/Circle Icon Placeholder */}
               <svg
                 className='w-16 h-16'
@@ -99,8 +117,8 @@ export default function AmuletosSection() {
             </SamastitCard>
 
             <SamastitCard
-              title='Bronce'
-              description='Conductor ancetral, activa y equilibra el flujo de vida.'>
+              title='Cobre'
+              description='Estructura y activación. Conductor ancestral asociado a equilibrio y fuerza vital.'>
               {/* Grid/Mesh Icon Placeholder */}
               <svg
                 className='w-16 h-16'

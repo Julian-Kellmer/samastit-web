@@ -5,7 +5,6 @@ import MeliquinaAccordion from './_components/MeliquinaAccordion'
 import { FxActionButton } from '../components/FxButton/FxActionButton'
 import TextRevealOnScroll from '../components/TextRevealOnScroll/TextRevealOnScroll'
 import Image from 'next/image'
-
 const page = () => {
   // Sample images - Replace these with your actual image URLs
   const sampleImages = [
@@ -21,9 +20,9 @@ const page = () => {
   return (
     <section className='min-h-screen bg-black text-white'>
       <div className='container flex flex-col items-start px-4 py-12 text-center h-[80svh] justify-center'>
-        <h1 className='text-display text-5xl font-bold mb-4'>EXP. MELIQUINA</h1>
+        <h1 className='text-display text-5xl font-bold mb-4'>EXP.MELIQUINA</h1>
         <p className='text-body text-xl text-gray-300 mb-12'>
-          “Tu equilibrio es una habilidad y se puede entrenar con práctica.”
+          La naturaleza como maestra
         </p>
       </div>
 
@@ -41,11 +40,10 @@ const page = () => {
         id='description'
         className='md:px-8 mt-8 min-h-[50svh] flex flex-col items-center col-span-full gap-16'>
         <div className='max-w-4xl text-center h-[80svh] flex justify-center items-center  '>
-          <h2 className='text-h2'>
-            <TextRevealOnScroll text='Samstit es una práctica corporal consciente que entrena tu sistema nervioso para encontrar equilibrio. Parte del mismo principio que la postura de yoga Samasthithi' />
+          <h2 className='text-h4'>
+            <TextRevealOnScroll text='Con el paso de los años, el espacio se fue ampliando y completando con distintos elementos que hoy forman parte de la experiencia. El domo, el sauna, la pileta junto al sauna intervenida con cobre y el arroyo cumplen una función concreta dentro del lugar. La propuesta es que puedas conocer qué aporta cada espacio y cómo puede ser vivido según la intención de quien lo habita.' />
           </h2>
         </div>
-        
 
         {/* Elements Accordion */}
         <div className='w-full '>
@@ -57,7 +55,7 @@ const page = () => {
                 title: 'intro',
                 content: (
                   <h2 className='text-[4rem] md:text-[8rem] leading-none text-primary font-bold mb-8 md:mb-12 text-center md:text-left uppercase'>
-                    Elementos <br />
+                    Espacios <br />
                     Meliquina
                   </h2>
                 ),
@@ -69,10 +67,9 @@ const page = () => {
                 content: (
                   <div className='flex flex-col md:flex-row gap-8 md:gap-12 w-full items-center'>
                     <div className='w-full md:w-1/2 relative h-[50vh] min-h-[400px] rounded-[2rem] overflow-hidden'>
-                      <img
+                      <Image
                         src='./images/domo.jpg'
                         alt='Elementos Meliquina'
-                        
                         className='object-cover'
                       />
                     </div>
@@ -112,10 +109,10 @@ const page = () => {
                 content: (
                   <div className='flex flex-col md:flex-row gap-8 md:gap-12 w-full items-center'>
                     <div className='w-full md:w-1/2 relative h-[50vh] min-h-[400px] rounded-[2rem] overflow-hidden'>
-                      <img
+                      <Image
                         src='./images/Sauna.jpg'
                         alt='Elementos Meliquina'
-                        
+                        fill
                         className='object-cover'
                       />
                     </div>
@@ -128,11 +125,11 @@ const page = () => {
                       </h2>
                       <p className='text-body text-lg text-gray-300 leading-relaxed max-w-xl'>
                         El sauna es un espacio de purificación profunda. El
-                        calor consciente actúa sobre el cuerpo físico liberando
-                        toxinas, mientras que a nivel energético facilita la
-                        descarga de cargas acumuladas y bloqueos internos. Cada
-                        sesión es una invitación a soltar, a vaciar, y a renovar
-                        la energía vital desde adentro hacia afuera.
+                        calor actúa sobre el cuerpo liberando toxinas y
+                        tensiones acumuladas, mientras que a nivel energético
+                        favorece la descarga de bloqueos internos. Cada sesión
+                        es una invitación a soltar, vaciar y renovar la energía
+                        vital desde adentro hacia afuera.
                       </p>
                       <div className='flex items-center gap-2 mt-4 cursor-pointer group w-fit'>
                         <span className='uppercase tracking-wider text-sm font-medium border-b border-white pb-0.5'>
@@ -149,14 +146,14 @@ const page = () => {
               {
                 id: 'banadera',
                 number: '03',
-                title: 'Bañadera de Bronce',
+                title: 'Pileta intervenida con Cobre',
                 content: (
                   <div className='flex flex-col md:flex-row gap-8 md:gap-12 w-full items-center'>
                     <div className='w-full md:w-1/2 relative h-[50vh] min-h-[350px] rounded-[2rem] overflow-hidden'>
-                      <img
+                      <Image
                         src='./images/domo.jpg'
                         alt='Elementos Meliquina'
-                       
+                        fill
                         className='object-cover'
                       />
                     </div>
@@ -165,16 +162,11 @@ const page = () => {
                         Elementos Meliquina
                       </span>
                       <h2 className='text-[3rem] md:text-[4.5rem] leading-[1] text-primary font-bold uppercase'>
-                        Bañadera de bronce
+                        Pileta intervenida con Cobre
                       </h2>
                       <p className='text-body text-lg text-gray-300 leading-relaxed max-w-xl'>
-                        La bañadera de bronce propone un ritual de inmersión y
-                        restauración. El bronce, por sus propiedades
-                        conductivas, potencia el trabajo energético y amplifica
-                        la sensación de arraigo y presencia. El agua caliente
-                        envuelve el cuerpo, relaja el sistema nervioso y
-                        habilita un espacio íntimo de reconexión, descanso
-                        profundo y regeneración.
+                        La pileta fue intervenida con un dispositivo de cobre y una boya solar que libera iones en el agua. El cobre, por su capacidad conductiva, interactúa con el cuerpo durante la inmersión, favoreciendo sensación de descarga, circulación y regulación. Es un espacio pensado para experimentar el agua desde una dimensión física y energética a la vez.
+
                       </p>
                       <div className='flex items-center gap-2 mt-4 cursor-pointer group w-fit'>
                         <span className='uppercase tracking-wider text-sm font-medium border-b border-white pb-0.5'>
@@ -195,10 +187,10 @@ const page = () => {
                 content: (
                   <div className='flex flex-col md:flex-row gap-8 md:gap-12 w-full items-center'>
                     <div className='w-full md:w-1/2 relative h-[50vh] min-h-[400px] rounded-[2rem] overflow-hidden'>
-                      <img
+                      <Image
                         src='./images/arroyo.jpg'
                         alt='Elementos Meliquina'
-                        
+                        fill
                         className='object-cover'
                       />
                     </div>
@@ -230,7 +222,7 @@ const page = () => {
                   </div>
                 ),
               },
-            ]}  
+            ]}
           />
         </div>
         <div className='w-full flex justify-end md:px-8 px-4 py-8'>
