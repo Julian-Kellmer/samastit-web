@@ -5,14 +5,20 @@ export const dynamic = 'force-dynamic'
 
 export async function POST(req: Request) {
   try {
-    const accessToken = process.env.MP_ACCESS_TOKEN;
-    const webhookSecret = process.env.MP_WEBHOOK_SECRET;
+    const accessToken = process.env.MP_ACCESS_TOKEN
+    const webhookSecret = process.env.MP_WEBHOOK_SECRET
 
     if (!accessToken) {
-      return NextResponse.json({ error: "Missing MP_ACCESS_TOKEN" }, { status: 500 });
+      return NextResponse.json(
+        { error: 'Missing MP_ACCESS_TOKEN' },
+        { status: 500 },
+      )
     }
     if (!webhookSecret) {
-      return NextResponse.json({ error: "Missing MP_WEBHOOK_SECRET" }, { status: 500 });
+      return NextResponse.json(
+        { error: 'Missing MP_WEBHOOK_SECRET' },
+        { status: 500 },
+      )
     }
     const { title = 'Mi producto', price = 2000 } = await req
       .json()
@@ -100,7 +106,13 @@ export async function POST(req: Request) {
       .eq('id', orderId)
 
     if (updErr) console.error('[orders] update mp_preference_id error:', updErr)
-
+    console.log('[env check]', {
+      hasAccessToken: Boolean(process.env.MP_ACCESS_TOKEN),
+      hasWebhookSecret: Boolean(process.env.MP_WEBHOOK_SECRET),
+      hasAppUrl: Boolean(process.env.APP_URL),
+      hasSupabaseUrl: Boolean(process.env.SUPABASE_URL),
+      hasServiceKey: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY),
+    })
     return NextResponse.json({
       orderId,
       id: MpData.id,
