@@ -36,7 +36,10 @@ export async function POST(req: Request) {
     if (orderErr || !order) {
       console.error('[orders] insert error', orderErr)
       return NextResponse.json(
-        { error: 'Failed to create order' },
+        {
+          error: 'Failed to create order',
+          details: orderErr, // <-- Exponemos el error para leerlo en el Network tab
+        },
         { status: 500 },
       )
     }
