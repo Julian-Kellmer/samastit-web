@@ -33,7 +33,6 @@ export async function POST(req: Request) {
         status: 'PENDING',
       })
       .select('*')
-      .single()
     if (orderErr || !order) {
       console.error('[orders] insert error', orderErr)
       return NextResponse.json(
@@ -41,7 +40,7 @@ export async function POST(req: Request) {
         { status: 500 },
       )
     }
-    const orderId = order.id
+    const orderId = order[0].id
 
     // crear preferencia en MP
 
