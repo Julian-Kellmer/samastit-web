@@ -1,17 +1,63 @@
 import { NextResponse } from 'next/server'
-
+import { supabaseAdmin } from '../../../lib/supabase/server'
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
 export async function POST(req: Request) {
   try {
-    const {
-      orderId = 'ORDER_TEST_1',
-      title = 'Mi producto',
-      price = 2000,
-    } = await req.json().catch(() => ({}))
+    const accessToken = process.env.MP_ACCESS_TOKEN;
+    const webhookSecret = process.env.MP_WEBHOOK_SECRET;
 
-    const accessToken = process.env.MP_ACCESS_TOKEN
+    if (!accessToken) {
+      return NextResponse.json({ error: "Missing MP_ACCESS_TOKEN" }, { status: 500 });
+    }
+    if (!webhookSecret) {
+      return NextResponse.json({ error: "Missing MP_WEBHOOK_SECRET" }, { status: 500 });
+    }
+    const { title = 'Mi producto', price = 2000 } = await req
+      .json()
+      .catch(() => ({}))
+    //creamos la orden en la base de datos PENDING
+    const { data: order, error: orderErr } = await supabaseAdmin
+      .from('orders')
+      .insert({
+        title,
+        amount: Number(price),
+        currency: 'ARS',
+        status: 'PENDING',
+      })
+      .select('*')
+      .single()
+    if (orderErr || !order) {
+      console.error('[orders] insert error', orderErr)
+      return NextResponse.json(
+        { error: 'Failed to create order' },
+        { status: 500 },
+      )
+    }
+    const orderId = order.id
+
+    // crear preferencia en MP
+
+    const baseUrl = (process.env.APP_URL || 'http://localhost:3000').replace(
+      /\/$/,
+      '',
+    )
+    const back_urls = {
+      success: `${baseUrl}/checkout/success?orderId=${orderId}`,
+      failure: `${baseUrl}/checkout/failure?orderId=${orderId}`,
+      pending: `${baseUrl}/checkout/pending?orderId=${orderId}`,
+    }
+    const notification_url = `${baseUrl}/api/mp/webhook?secret=${webhookSecret}`
+    const payload = {
+      items: [
+        { title, quantity: 1, unit_price: Number(price), currency_id: 'ARS' },
+      ],
+      external_reference: String(orderId),
+      back_urls,
+      auto_return: 'approved',
+      notification_url,
+    }
     if (!accessToken) {
       return NextResponse.json(
         { error: 'Missing MP_ACCESS_TOKEN' },
@@ -19,30 +65,7 @@ export async function POST(req: Request) {
       )
     }
 
-    // En local: dejamos back_urls igual (no afectan la creación),
-    // pero desactivamos auto_return SIEMPRE.
-    const baseUrl = (
-      process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
-    ).replace(/\/$/, '')
-    const back_urls = {
-      success: `${baseUrl}/checkout/success?orderId=${orderId}`,
-      failure: `${baseUrl}/checkout/failure?orderId=${orderId}`,
-      pending: `${baseUrl}/checkout/pending?orderId=${orderId}`,
-    }
- const notification_url = `${baseUrl}/api/mp/webhook?secret=${process.env.MP_WEBHOOK_SECRET}`;
-    const payload = {
-      items: [
-        { title, quantity: 1, unit_price: Number(price), currency_id: 'ARS' },
-      ],
-      external_reference: String(orderId),
-      back_urls,
-      // auto_return: "approved", // ❌ desactivado por ahora
-      notification_url
-    }
-
-    console.log('[MP] Creating preference with:', payload)
-
-    const res = await fetch(
+    const MPres = await fetch(
       'https://api.mercadopago.com/checkout/preferences',
       {
         method: 'POST',
@@ -54,24 +77,35 @@ export async function POST(req: Request) {
       },
     )
 
-    const data = await res
-      .json()
-      .catch(() => ({ message: 'Failed to parse MP response JSON' }))
+    const MpData = await MPres.json().catch(() => ({
+      message: 'Failed to parse MP response JSON',
+    }))
 
-    if (!res.ok) {
-      console.error('[MP] API error:', res.status, data)
+    if (!MPres.ok) {
+      console.error('[MP] API error:', MPres.status, MpData)
+      await supabaseAdmin
+        .from('orders')
+        .update({ status: 'FAILED' })
+        .eq('id', orderId)
+
       return NextResponse.json(
-        { mp_status: res.status, details: data },
-        { status: res.status },
+        { mp_status: MPres.status, details: MpData },
+        { status: MPres.status },
       )
     }
 
-    console.log('[MP] Preference created. ID:', data.id)
+    const { error: updErr } = await supabaseAdmin
+      .from('orders')
+      .update({ mp_preference_id: MpData.id })
+      .eq('id', orderId)
+
+    if (updErr) console.error('[orders] update mp_preference_id error:', updErr)
 
     return NextResponse.json({
-      id: data.id,
-      init_point: data.init_point,
-      sandbox_init_point: data.sandbox_init_point,
+      orderId,
+      id: MpData.id,
+      init_point: MpData.init_point,
+      sandbox_init_point: MpData.sandbox_init_point,
     })
   } catch (err) {
     console.error('[create-preference] Unhandled:', err)
