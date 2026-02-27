@@ -90,7 +90,7 @@ export default function AshtangaSection() {
                 </ul>
               </div>
               <div>
-                <PayButton orderID='ORDER_TEST_1' title='Ashtanga Basico' price={140} text='Comprar por mercado libre'/>
+                <PayButton title='Ashtanga Basico' price={140} text='Comprar por mercado libre'/>
               </div>
             </div>
 
