@@ -1,19 +1,19 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 import { supabaseAdmin } from "../../../lib/supabase/server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-export async function GET(
-  _req: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  const { id } = await params;
+export async function GET(_req: Request, context: any) {
+  const id = context?.params?.id ?? (await context?.params)?.id;
+
+  if (!id) {
+    return NextResponse.json({ error: "Missing id" }, { status: 400 });
+  }
 
   const { data, error } = await supabaseAdmin
     .from("orders")
-    .select("id,status,amount,currency,created_at,title") // 👈 no expongas ids de MP
+    .select("id,status,amount,currency,created_at,title")
     .eq("id", id)
     .single();
 
