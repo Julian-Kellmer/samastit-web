@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import MeliquinaAccordion from '../meliquina/_components/MeliquinaAccordion'
 // import Button from '../components/Button'
 import { FxActionButton } from '../components/FxButton/FxActionButton'
-import { createCheckout } from '../services/n8n/checkout'
+import { PayButton } from '../components/PayButton.tsx/PayButton'
 export default function AshtangaSection() {
   const [activeItem, setActiveItem] = useState<string | null>('info')
 
@@ -90,23 +90,7 @@ export default function AshtangaSection() {
                 </ul>
               </div>
               <div>
-                <FxActionButton
-                  onClick={() =>
-                    createCheckout({
-                      productId: 'test-joya-001',
-                      productName: 'Ashtanga Basico',
-                      price: 120,
-                      currency: 'USD',
-                      quantity: 1,
-                      customer: {
-                        email: 'test@mail.com',
-                        name: 'julian kellmer',
-                      },
-                    })
-                  }
-                  disabled={false}>
-                  hacer test
-                </FxActionButton>
+                <PayButton orderID='ORDER_TEST_1' title='Ashtanga Basico' price={140} text='Comprar por mercado libre'/>
               </div>
             </div>
 

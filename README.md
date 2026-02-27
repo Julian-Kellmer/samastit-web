@@ -34,3 +34,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+## CONECCION CON MERCADO PAGO
+
+crear un archivo en lib/mercadopago/server.ts que exporte una funcion que cree una preferencia de mercado pago, o que crea un cliente de este , 
+
+Siguiente paso =====> crear   y configurar uina preferencia de pago (server-side)
+Una preferencia de pago es un objeto que contiene informacion acerca del producto o el objeto que deseo cobrar.
+dentre de mercado pago esto se conoce como preference. al crear esta se puede definir cosas como:
+
+- items: los productos o servicios que se desean cobrar
+-Precio: el precio del producto o servicio
+- payer: la persona que va a pagar
+- back_urls: las urls a las que se va a redirigir al usuario despues de pagar
+- notification_url: la url a la que se va a enviar la notificacion de pago
+- auto_return: si se debe retornar automaticamente al usuario despues de pagar
+
+en esta etapa de definicion de preference vamos a indicar que medios de pago se van a usar estos, suelen ser por default lo que ofrece mercado pago.
+
+
+para crear un preferencia de pago se debe utilizar el metodo asociado a preferencee en el sdk de backend, es necesario que crees una preferencia de pago para cada pedido o fliujo de pago que quieras iniciar.
+
