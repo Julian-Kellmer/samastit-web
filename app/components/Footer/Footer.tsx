@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import {FxLinkButton} from '../FxButton/FxLinkButton'
+import { FxLinkButton } from '../FxButton/FxLinkButton'
 
 export default function Footer() {
   return (
@@ -53,7 +53,9 @@ export default function Footer() {
 
             {/* Products & Services */}
             <div className='flex flex-col gap-4'>
-              <h3 className='text-white mb-2 text-[24px] '>Productos y servicios</h3>
+              <h3 className='text-white mb-2 text-[24px] '>
+                Productos y servicios
+              </h3>
               <Link
                 href='/meliquina'
                 className='hover:text-white/70 transition-colors text-[16px]'>
@@ -75,18 +77,18 @@ export default function Footer() {
             <div className='flex flex-col gap-4'>
               <h3 className='text-white mb-2 text-[24px]'>Contacto</h3>
               <Link
-                href='https://instagram.com'
+                href='https://instagram.com/samastit'
                 target='_blank'
                 className='hover:text-white/70 transition-colors text-[16px]'>
                 Instagram
               </Link>
               <Link
-                href='mailto:info@pablopirillo.com'
+                href='mailto:ashtangapirillo@gmail.com'
                 className='hover:text-white/70 transition-colors text-[16px]'>
                 Mail
               </Link>
               <Link
-                href='https://wa.me/123456789'
+                href='https://wa.me/+5491158044328'
                 target='_blank'
                 className='hover:text-white/70 transition-colors'>
                 Whatsapp
@@ -104,10 +106,19 @@ export default function Footer() {
             <p className='text-white mb-2'>
               Pagina desarrollada por Julian Kellmer
             </p>
-            <p className='leading-relaxed text-xs'>
-              Lorem impsum blacksde Lorem impsum blacksdeLorem impsum
-              blacksdeLorem impsum blacksdeLorem impsum blacksde
-            </p>
+            <a
+              href='https://jk-portfolio-neon.vercel.app/'
+              target='_blank'
+              className='leading-relaxed text-xs'>
+              Te invito a visitar mi portfolio y si tienes alguna duda no dudes
+              en contactarme
+            </a>
+            <a
+              href='whatsapp://send?phone=5491166666666'
+              target='_blank'
+              className='leading-relaxed text-xs'>
+              Whatsapp
+            </a>
           </div>
 
           <div className='flex gap-6'>
@@ -120,11 +131,6 @@ export default function Footer() {
               href='/copyright'
               className='hover:text-white transition-colors'>
               CopyRight Policy
-            </Link>
-            <Link
-              href='/privacy'
-              className='hover:text-white transition-colors'>
-              Privacy policy
             </Link>
           </div>
         </div>

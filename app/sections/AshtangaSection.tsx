@@ -47,7 +47,7 @@ export default function AshtangaSection() {
                 <FxActionButton
                   onClick={() => setActiveItem('price')}
                   disabled={false}>
-                  comprar
+                  Ver opciones
                 </FxActionButton>
               </div>
             </div>
@@ -142,11 +142,11 @@ export default function AshtangaSection() {
                 </ul>
               </div>
               <div>
-                <FxActionButton
-                  onClick={() => {}}
-                  disabled={false}>
-                  Comprar
-                </FxActionButton>
+                <PayButton
+                  title='Ashtanga Completo'
+                  price={245}
+                  text='Comprar por mercado libre'
+                />
               </div>
             </div>
 
@@ -184,9 +184,14 @@ export default function AshtangaSection() {
               </div>
               <div>
                 <FxActionButton
-                  onClick={() => {}}
+                  onClick={() => {
+                    window.open(
+                      'https://wa.me/+5491158044328?text=quiero%20consultar%20por%20la%20tercera%20opcion%20de%20ashtanga',
+                      '_blank',
+                    )
+                  }}
                   disabled={false}>
-                  Comprar
+                  Consultar
                 </FxActionButton>
               </div>
             </div>

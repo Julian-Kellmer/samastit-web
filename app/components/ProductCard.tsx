@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
+import { PayButton } from './PayButton.tsx/PayButton'
+import Image from 'next/image'
 
 interface ProductCardProps {
   title: string
@@ -30,7 +32,7 @@ export default function ProductCard({
           setIsOpen(false)
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     )
 
     if (cardRef.current) {
@@ -102,7 +104,8 @@ export default function ProductCard({
         <div className='absolute inset-0 flex items-center justify-center'>
           {children}
           {img && (
-            <img
+            <Image
+              fill
               src={img}
               alt={title}
               className='object-cover w-full h-full'
@@ -119,13 +122,20 @@ export default function ProductCard({
             {title}
           </h3>
           {price && (
-            <div className='relative px-3 py-1 bg-white/10 rounded hover:bg-[var(--color-primary)] transition-all duration-300 overflow-hidden group/price min-w-[70px] text-center'>
-              <span className='block text-xs font-mono text-white/80 transition-transform duration-300 group-hover/price:-translate-y-[150%]'>
-                {price}
-              </span>
-              <span className='absolute inset-0 flex items-center justify-center text-[10px] font-bold uppercase text-white translate-y-full group-hover/price:translate-y-0 transition-transform duration-300'>
-                Comprar
-              </span>
+            <div className='flex items-center gap-3 ml-auto'>
+              {/* Botón de compra de Mercado Pago explícito */}
+              <PayButton
+                title={title}
+                price={price}
+                text='Comprar'
+              />
+
+              {/* Precio estático y siempre visible */}
+              <div className='px-3 py-1 bg-white/10 rounded min-w-[70px] text-center'>
+                <span className='block text-xs font-mono text-white/80'>
+                  ${price.toLocaleString('es-AR')}
+                </span>
+              </div>
             </div>
           )}
         </div>

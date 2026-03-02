@@ -5,6 +5,7 @@ import MeliquinaAccordion from './_components/MeliquinaAccordion'
 import { FxActionButton } from '../components/FxButton/FxActionButton'
 import TextRevealOnScroll from '../components/TextRevealOnScroll/TextRevealOnScroll'
 import Image from 'next/image'
+import Link from 'next/link'
 const page = () => {
   // Sample images - Replace these with your actual image URLs
   const sampleImages = [
@@ -68,7 +69,8 @@ const page = () => {
                   <div className='flex flex-col md:flex-row gap-8 md:gap-12 w-full items-center'>
                     <div className='w-full md:w-1/2 relative h-[50vh] min-h-[400px] rounded-[2rem] overflow-hidden'>
                       <Image
-                        src='./images/domo.jpg'
+                        fill
+                        src='/images/Domo.png'
                         alt='Elementos Meliquina'
                         className='object-cover'
                       />
@@ -110,7 +112,7 @@ const page = () => {
                   <div className='flex flex-col md:flex-row gap-8 md:gap-12 w-full items-center'>
                     <div className='w-full md:w-1/2 relative h-[50vh] min-h-[400px] rounded-[2rem] overflow-hidden'>
                       <Image
-                        src='./images/Sauna.jpg'
+                        src='/images/Sauna.png'
                         alt='Elementos Meliquina'
                         fill
                         className='object-cover'
@@ -151,7 +153,7 @@ const page = () => {
                   <div className='flex flex-col md:flex-row gap-8 md:gap-12 w-full items-center'>
                     <div className='w-full md:w-1/2 relative h-[50vh] min-h-[350px] rounded-[2rem] overflow-hidden'>
                       <Image
-                        src='./images/domo.jpg'
+                        src='/images/Pileta.png'
                         alt='Elementos Meliquina'
                         fill
                         className='object-cover'
@@ -165,8 +167,13 @@ const page = () => {
                         Pileta intervenida con Cobre
                       </h2>
                       <p className='text-body text-lg text-gray-300 leading-relaxed max-w-xl'>
-                        La pileta fue intervenida con un dispositivo de cobre y una boya solar que libera iones en el agua. El cobre, por su capacidad conductiva, interactúa con el cuerpo durante la inmersión, favoreciendo sensación de descarga, circulación y regulación. Es un espacio pensado para experimentar el agua desde una dimensión física y energética a la vez.
-
+                        La pileta fue intervenida con un dispositivo de cobre y
+                        una boya solar que libera iones en el agua. El cobre,
+                        por su capacidad conductiva, interactúa con el cuerpo
+                        durante la inmersión, favoreciendo sensación de
+                        descarga, circulación y regulación. Es un espacio
+                        pensado para experimentar el agua desde una dimensión
+                        física y energética a la vez.
                       </p>
                       <div className='flex items-center gap-2 mt-4 cursor-pointer group w-fit'>
                         <span className='uppercase tracking-wider text-sm font-medium border-b border-white pb-0.5'>
@@ -188,7 +195,7 @@ const page = () => {
                   <div className='flex flex-col md:flex-row gap-8 md:gap-12 w-full items-center'>
                     <div className='w-full md:w-1/2 relative h-[50vh] min-h-[400px] rounded-[2rem] overflow-hidden'>
                       <Image
-                        src='./images/arroyo.jpg'
+                        src='/images/Arroyo.webp'
                         alt='Elementos Meliquina'
                         fill
                         className='object-cover'
@@ -226,7 +233,13 @@ const page = () => {
           />
         </div>
         <div className='w-full flex justify-end md:px-8 px-4 py-8'>
-          <FxActionButton onClick={() => {}}>Reservar</FxActionButton>
+          <Link href='/meliquina/form'>
+            <FxActionButton
+              onClick={() => {}}
+              disabled={false}>
+              Reservar
+            </FxActionButton>
+          </Link>
         </div>
       </section>
     </section>

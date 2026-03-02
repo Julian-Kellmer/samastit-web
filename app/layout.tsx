@@ -52,7 +52,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html
+      lang='es'
+      suppressHydrationWarning>
       <body
         className={`${oswald.className} ${pp_neue_montreal.className} antialiased`}>
         <Header />

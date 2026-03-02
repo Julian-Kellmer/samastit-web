@@ -2,8 +2,9 @@
 
 import React from 'react'
 import ImageMarquee from '../components/ImageMarquee'
-import {FxLinkButton} from '../components/FxButton/FxLinkButton'
-import {FxActionButton} from '../components/FxButton/FxActionButton'
+import { FxLinkButton } from '../components/FxButton/FxLinkButton'
+import { FxActionButton } from '../components/FxButton/FxActionButton'
+import Link from 'next/link'
 
 export default function MeliquinaSection() {
   // Using placeholders as per AboutSection
@@ -33,12 +34,24 @@ export default function MeliquinaSection() {
                 montaña te conquiste a ti
               </h3>
               <p className='text-body text-white/70 max-w-2xl'>
-                Como extensión de la práctica, creé un espacio natural en Villa Lago Meliquina, Patagonia Argentina. Rodeado de bosque autóctono, con agua de vertiente y energía solar, el lugar fue concebido como un contenedor para procesos profundos: retiros, estancias personales y alquiler para facilitadores, terapeutas y artistas que buscan un entorno de silencio, concentración y creación
+                Como extensión de la práctica, creé un espacio natural en Villa
+                Lago Meliquina, Patagonia Argentina. Rodeado de bosque
+                autóctono, con agua de vertiente y energía solar, el lugar fue
+                concebido como un contenedor para procesos profundos: retiros,
+                estancias personales y alquiler para facilitadores, terapeutas y
+                artistas que buscan un entorno de silencio, concentración y
+                creación
               </p>
             </div>
 
-            <div className='flex gap-4 shrink-0'>
-              <FxActionButton onClick={() => {}} disabled={false}>Reservar</FxActionButton>
+            <div className='flex flex-wrap gap-4 shrink-0'>
+              <Link href='/meliquina/form'>
+                <FxActionButton
+                  onClick={() => {}}
+                  disabled={false}>
+                  Reservar
+                </FxActionButton>
+              </Link>
               <FxLinkButton href='/meliquina'>Ver más</FxLinkButton>
             </div>
           </div>

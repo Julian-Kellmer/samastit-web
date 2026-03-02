@@ -17,6 +17,12 @@ const PricingCard: React.FC<PricingCardProps> = ({
   buttonText = 'Contactar',
   buttonLink = '#',
 }) => {
+  const whatsappMessage = `Hola! Quisiera consultar por el plan *${title}* que incluye:\n${features.map((f) => `- ${f}`).join('\n')}`
+  const finalLink =
+    buttonLink !== '#'
+      ? buttonLink
+      : `https://wa.me/+5491158044328?text=${encodeURIComponent(whatsappMessage)}`
+
   return (
     <div
       className={`relative flex flex-col p-6 rounded-2xl border transition-all duration-300 group
@@ -66,7 +72,9 @@ const PricingCard: React.FC<PricingCardProps> = ({
       </ul>
 
       <a
-        href={buttonLink}
+        href={finalLink}
+        target='_blank'
+        rel='noreferrer'
         className={`block w-full text-center py-3 px-6 rounded-lg text-sm font-bold uppercase tracking-wide transition-colors duration-300
         ${
           isHighlight
