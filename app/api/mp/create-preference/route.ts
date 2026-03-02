@@ -66,13 +66,6 @@ export async function POST(req: Request) {
       auto_return: 'approved',
       notification_url,
     }
-    if (!accessToken) {
-      return NextResponse.json(
-        { error: 'Missing MP_ACCESS_TOKEN' },
-        { status: 500 },
-      )
-    }
-
     const MPres = await fetch(
       'https://api.mercadopago.com/checkout/preferences',
       {

@@ -21,7 +21,7 @@ const MeliquinaAccordion: React.FC<MeliquinaAccordionProps> = ({
   onToggle,
 }) => {
   const [internalActiveId, setInternalActiveId] = useState<string | null>(
-    items[0]?.id || null
+    items[0]?.id || null,
   )
 
   const isControlled = controlledActiveId !== undefined
@@ -37,46 +37,46 @@ const MeliquinaAccordion: React.FC<MeliquinaAccordionProps> = ({
   }
 
   return (
-    <div className='w-full h-auto md:h-[600px] flex flex-col md:flex-row text-white'>
+    <div className='w-full h-auto  flex flex-col lg:flex-row text-white'>
       {items.map((item) => {
         const isActive = activeId === item.id
         return (
           <div
             key={item.id}
             className={`
-              relative transition-all duration-700 ease-in-out border-b md:border-b-0 md:border-r border-white/20 last:border-0
+              relative transition-all duration-700 ease-in-out border-b lg:border-b-0 lg:border-r border-white/20 last:border-0
               ${
                 isActive
-                  ? 'flex-grow-[3] h-auto md:h-full'
-                  : 'flex-grow-0 h-[80px] md:h-full md:w-[80px]'
+                  ? 'flex-grow-[3] h-auto lg:h-full'
+                  : 'flex-grow-0 h-[80px] min-h-[80px] shrink-0 lg:h-full lg:w-[80px] lg:min-w-[80px]'
               }
-              flex flex-col md:flex-row overflow-hidden group 
+              flex flex-col lg:flex-row overflow-hidden group 
             `}>
             <div
               onClick={() => handleToggle(item.id)}
               className={`
-                h-[80px] md:h-full w-full md:w-[80px] flex items-center justify-between md:justify-start px-6 md:px-0 flex-shrink-0
-                md:flex-col md:py-8 transition-colors duration-500
+                h-[80px] lg:h-full w-full lg:w-[80px] flex items-center justify-between lg:justify-start px-6 lg:px-0 flex-shrink-0
+                lg:flex-col lg:py-8 transition-colors duration-500
                 ${
                   isActive ? 'bg-transparent' : 'hover:bg-white/5'
                 } cursor-pointer
               `}>
-              <div className='flex flex-row md:flex-col items-center md:items-center gap-4 md:gap-8 md:h-full w-full'>
-                <span className='text-sm font-light tracking-widest opacity-80 md:rotate-180 md:[writing-mode:vertical-rl]'>
+              <div className='flex flex-row lg:flex-col items-center lg:items-center gap-4 lg:gap-8 lg:h-full w-full'>
+                <span className='text-sm font-light tracking-widest opacity-80 lg:rotate-180 lg:[writing-mode:vertical-rl]'>
                   {item.number}
                 </span>
 
                 <span
                   className={`
                     text-lg font-medium uppercase tracking-wider whitespace-nowrap 
-                    md:[writing-mode:vertical-rl] md:rotate-180 ${
-                      isActive ? 'md:rotate-0 hidden' : 'md:rotate-180'
+                    lg:[writing-mode:vertical-rl] lg:rotate-180 ${
+                      isActive ? 'lg:rotate-0 hidden' : 'lg:rotate-180'
                     }
                   `}>
                   {item.title}
                 </span>
 
-                <div className='md:mt-auto text-xl opacity-50'>
+                <div className='lg:mt-auto text-xl opacity-50'>
                   {isActive ? '-' : '+'}
                 </div>
               </div>
@@ -84,10 +84,10 @@ const MeliquinaAccordion: React.FC<MeliquinaAccordionProps> = ({
 
             <div
               className={`
-                flex-1 overflow-hidden transition-all duration-700 opacity-0
+                flex-1 overflow-hidden transition-all duration-700 opacity-0 min-w-0
                 ${isActive ? 'opacity-100 delay-200' : 'opacity-0'}
               `}>
-              <div className='p-8 md:p-12 w-full h-full flex flex-col justify-center min-w-[300px]'>
+              <div className='p-2  w-full h-full flex flex-col justify-center min-w-[300px]'>
                 {item.content}
               </div>
             </div>

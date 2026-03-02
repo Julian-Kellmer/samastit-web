@@ -1,7 +1,6 @@
 'use client'
 import styles from './style.module.scss'
 export function PayButton({
-
   title,
   price,
   text,
@@ -10,40 +9,44 @@ export function PayButton({
   price: number
   text: string
 }) {
-  const handlePay = async (title: string, price: number) => {
-  try {
-    const res = await fetch('/api/mp/create-preference', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, price }),
-    })
+  const handlePay = async () => {
+    try {
+      const res = await fetch('/api/mp/create-preference', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, price }),
+      })
 
-    const data = await res.json()
-    console.log('[MP create-preference response]', { ok: res.ok, status: res.status, data })
+      const data = await res.json()
+      console.log('[MP create-preference response]', {
+        ok: res.ok,
+        status: res.status,
+        data,
+      })
 
-    if (!res.ok) {
-      alert('Error iniciando pago (backend)')
-      return
+      if (!res.ok) {
+        alert('Error iniciando pago (backend)')
+        return
+      }
+
+      // Producción: init_point; fallback a sandbox_init_point
+      const checkoutUrl = data.init_point || data.sandbox_init_point
+
+      if (!checkoutUrl) {
+        console.error('Missing init_point/sandbox_init_point:', data)
+        alert('Error: Mercado Pago no devolvió init_point')
+        return
+      }
+
+      window.location.href = checkoutUrl
+    } catch (err) {
+      console.error('Error creando preferencia:', err)
+      alert('Error iniciando pago')
     }
-
-    // ✅ En TEST: preferí sandbox_init_point
-    const checkoutUrl = data.sandbox_init_point || data.init_point
-
-    if (!checkoutUrl) {
-      console.error('Missing init_point/sandbox_init_point:', data)
-      alert('Error: Mercado Pago no devolvió init_point')
-      return
-    }
-
-    window.location.href = checkoutUrl
-  } catch (err) {
-    console.error('Error creando preferencia:', err)
-    alert('Error iniciando pago')
   }
-}
   return (
     <button
-      onClick={() => handlePay(title, price)}
+      onClick={handlePay}
       className={styles.btn}>
       <span className={styles.label}>{text}</span>
     </button>

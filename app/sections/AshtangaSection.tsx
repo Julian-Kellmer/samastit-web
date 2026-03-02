@@ -14,12 +14,14 @@ export default function AshtangaSection() {
       number: '01',
       title: 'Ashtanga Info',
       content: (
-        <div className='flex flex-col gap-6 w-full min-h-[50svh] text-white'>
+        <div className='flex flex-col gap-6 w-full  text-white'>
           <h3 className='text-h4 md:text-h3 font-light leading-tight'>
-            Después de años de enseñanza tradicional, presento una síntesis estructurada del método destinada a practicantes avanzados y maestros.
+            Después de años de enseñanza tradicional, presento una síntesis
+            estructurada del método destinada a practicantes avanzados y
+            maestros.
           </h3>
-          <div className='flex gap-6'>
-            <div className='flex-2 relative w-1/2 aspect-video bg-white/10 rounded-lg overflow-hidden flex items-center justify-center group cursor-pointer'>
+          <div className='flex flex-col lg:flex-row gap-6'>
+            <div className='flex-2 relative w-full lg:w-1/2 aspect-video bg-white/10 rounded-lg overflow-hidden flex items-center justify-center group cursor-pointer'>
               {/* Video Placeholder */}
               <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent' />
               <div className='w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
@@ -33,7 +35,13 @@ export default function AshtangaSection() {
 
             <div className='flex-1 flex flex-col h-full justify-between '>
               <p className='text-body text-white/60'>
-                Decidí reunir esta experiencia en una serie de videos y un PDF complementario, como una forma clara de transmitir lo esencial aprendido a lo largo de los años. El material está orientado a quienes desean profundizar en la comprensión técnica de la Serie Primaria e Intermedia. No es una clase guiada ni un curso introductorio. Es un material de estudio para comprender la práctica desde adentro.
+                Decidí reunir esta experiencia en una serie de videos y un PDF
+                complementario, como una forma clara de transmitir lo esencial
+                aprendido a lo largo de los años. El material está orientado a
+                quienes desean profundizar en la comprensión técnica de la Serie
+                Primaria e Intermedia. No es una clase guiada ni un curso
+                introductorio. Es un material de estudio para comprender la
+                práctica desde adentro.
               </p>
               <div className=''>
                 <FxActionButton
@@ -52,14 +60,14 @@ export default function AshtangaSection() {
       number: '02',
       title: 'Ahstanga Price',
       content: (
-        <div className='flex flex-col w-full h-screen gap-8 text-white p-4 justify-between'>
+        <div className='flex flex-col w-full h-full min-h-fit gap-8 text-white justify-between'>
           <p className='text-h5 font-light leading-snug w-full'>
             También ofrezco talleres presencial de ajustes de Ashtanga en CABA,
             donde exploramos la técnica de ajustes desde la intervención
             consciente.
           </p>
 
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-8 w-full flex-1'>
+          <div className='grid grid-cols-1 xl:grid-cols-3 gap-8 w-full flex-1'>
             {/* Option 1: Basico */}
             <div className='flex flex-col gap-4 border-l border-white/10 pl-6 relative group justify-between'>
               <div>
@@ -69,20 +77,23 @@ export default function AshtangaSection() {
                 </p>
                 <ul className='space-y-2 text-tiny text-white/70 mt-4'>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span> 2 videos – Series 1 & 2
+                    <span className='text-white'>✓</span> 2 videos – Series 1 &
+                    2
                   </li>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span> Trabajo completo estilo Mysore
+                    <span className='text-white'>✓</span> Trabajo completo
+                    estilo Mysore
                   </li>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span> Observación y ajustes postura por postura
+                    <span className='text-white'>✓</span> Observación y ajustes
+                    postura por postura
                   </li>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span>  Placas con claves para maestros y practicantes
-
+                    <span className='text-white'>✓</span> Placas con claves para
+                    maestros y practicantes
                   </li>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span>  PDF complementario
+                    <span className='text-white'>✓</span> PDF complementario
                   </li>
                   <li className='flex items-center gap-2'>
                     Vinyasas (transiciones) no incluidas
@@ -90,7 +101,11 @@ export default function AshtangaSection() {
                 </ul>
               </div>
               <div>
-                <PayButton title='Ashtanga Basico' price={140} text='Comprar por mercado libre'/>
+                <PayButton
+                  title='Ashtanga Basico'
+                  price={140}
+                  text='Comprar por mercado libre'
+                />
               </div>
             </div>
 
@@ -103,20 +118,23 @@ export default function AshtangaSection() {
                 </p>
                 <ul className='space-y-2 text-tiny text-white/70 mt-4'>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span> Todo lo incluido en el Curso Básico
+                    <span className='text-white'>✓</span> Todo lo incluido en el
+                    Curso Básico
                   </li>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span> 1 encuentro individual (hasta 2 h.)
+                    <span className='text-white'>✓</span> 1 encuentro individual
+                    (hasta 2 h.)
                   </li>
                   <li className='flex items-center gap-2'>
                     <span className='text-white'>✓</span> Virtual o presencial
                   </li>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span> Espacio para practicar, revisar y profundizar
-
+                    <span className='text-white'>✓</span> Espacio para
+                    practicar, revisar y profundizar
                   </li>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span> Certificado de participación
+                    <span className='text-white'>✓</span> Certificado de
+                    participación
                   </li>
                   <li className='flex items-center gap-2'>
                     Vinyasas (transiciones) no incluidas
@@ -141,20 +159,23 @@ export default function AshtangaSection() {
                 </p>
                 <ul className='space-y-2 text-tiny text-white/70 mt-4'>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span> Clases presenciales de Ashtanga
+                    <span className='text-white'>✓</span> Clases presenciales de
+                    Ashtanga
                   </li>
                   <li className='flex items-center gap-2'>
                     <span className='text-white'>✓</span> Clases virtuales
                   </li>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span> Consultorías individuales
-
+                    <span className='text-white'>✓</span> Consultorías
+                    individuales
                   </li>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span> Acompañamiento para apertura de escuela
+                    <span className='text-white'>✓</span> Acompañamiento para
+                    apertura de escuela
                   </li>
                   <li className='flex items-center gap-2'>
-                    <span className='text-white'>✓</span> Talleres en escuelas para practicantes
+                    <span className='text-white'>✓</span> Talleres en escuelas
+                    para practicantes
                   </li>
                   <li className='flex items-center gap-2'>
                     <span className='text-white'>✓</span> Taller para profesores
@@ -176,7 +197,7 @@ export default function AshtangaSection() {
   ]
 
   return (
-    <section className='relative min-h-screen bg-black text-white py-24 layout-wrap'>
+    <section className='relative  bg-black text-white layout-wrap'>
       <div className='layout-grid'>
         {/* Layout: constrained to col 2-8 as requested */}
         <div className='col-span-full md:col-start-2 md:col-end-8 flex flex-col gap-12'>
@@ -185,7 +206,7 @@ export default function AshtangaSection() {
           </h2>
 
           {/* Accordion Component */}
-          <div className='w-full'>
+          <div className='w-full '>
             <MeliquinaAccordion
               items={accordionItems}
               activeId={activeItem}

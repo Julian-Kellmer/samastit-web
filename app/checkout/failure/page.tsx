@@ -1,11 +1,64 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
+import { FxLinkButton } from '@/app/components/FxButton/FxLinkButton'
+import { FxButtonBase } from '@/app/components/FxButton/FxButton'
 
-export default function FailurePage({ searchParams }: any) {
+// ─── Standalone components (outside render to avoid React warning) ────────────
+
+function FailureButtons() {
+  return (
+    <div className='flex flex-col sm:flex-row gap-6 mt-12 justify-center'>
+      <FxLinkButton href='/'>Volver al inicio</FxLinkButton>
+      <a
+        href='https://wa.me/5491158044328'
+        target='_blank'
+        rel='noopener noreferrer'
+        className='inline-block'>
+        <FxButtonBase>Contactarme por WhatsApp</FxButtonBase>
+      </a>
+    </div>
+  )
+}
+
+function PageShell({
+  children,
+  status,
+}: {
+  children: React.ReactNode
+  status?: string
+}) {
+  return (
+    <div className='min-h-screen flex flex-col items-center justify-center px-6 text-center gap-6'>
+      <h1 className='text-6xl sm:text-8xl font-black uppercase tracking-tight text-primary leading-none'>
+        Pago Rechazado
+      </h1>
+
+      {status && (
+        <p className='text-sm text-foreground/50 uppercase tracking-widest'>
+          Estado: <span className='text-primary/80'>{status}</span>
+        </p>
+      )}
+
+      <p className='text-foreground/60 max-w-md text-balance'>
+        Hubo un problema al procesar tu pago. Por favor, intenta nuevamente o
+        contáctame para proceder de otra manera.
+      </p>
+
+      {children}
+    </div>
+  )
+}
+
+// ─── Page ────────────────────────────────────────────────────────────────────
+
+export default function FailurePage({
+  searchParams,
+}: {
+  searchParams: { orderId?: string }
+}) {
   const orderId = searchParams?.orderId
-  const [order, setOrder] = useState<any>(null)
+  const [order, setOrder] = useState<Record<string, string> | null>(null)
 
   useEffect(() => {
     if (!orderId) return
@@ -27,30 +80,30 @@ export default function FailurePage({ searchParams }: any) {
     }
   }, [orderId])
 
-  if (!orderId) return <div>Missing orderId</div>
-  if (!order) return <div>Cargando estado del pago fallido...</div>
-  if (order.error) return <div>Error: {order.error}</div>
+  if (!orderId)
+    return (
+      <PageShell>
+        <FailureButtons />
+      </PageShell>
+    )
+
+  if (!order)
+    return (
+      <div className='min-h-screen flex items-center justify-center text-foreground/60'>
+        Cargando estado del pago...
+      </div>
+    )
+
+  if (order.error)
+    return (
+      <div className='min-h-screen flex items-center justify-center text-foreground/60'>
+        Error: {order.error}
+      </div>
+    )
 
   return (
-    <div style={{ padding: 24 }}>
-      <h1>Pago Fallido o Rechazado</h1>
-      <p>
-        <b>Order:</b> {order.id}
-      </p>
-      <p>
-        <b>Status actual:</b> {order.status}
-      </p>
-      <div style={{ marginTop: 20 }}>
-        <p>❌ Hubo un problema al procesar tu pago.</p>
-        <p>Por favor, intenta nuevamente o utiliza otro medio de pago.</p>
-      </div>
-      <div style={{ marginTop: 24 }}>
-        <Link
-          href='/'
-          style={{ textDecoration: 'underline', color: 'blue' }}>
-          Volver al inicio
-        </Link>
-      </div>
-    </div>
+    <PageShell status={order.status}>
+      <FailureButtons />
+    </PageShell>
   )
 }
