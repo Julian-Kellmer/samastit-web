@@ -1,14 +1,10 @@
-'use client'
 
-import React from 'react'
 import Link from 'next/link'
-import { FxActionButton } from './components/FxButton/FxActionButton'
 
 export default function NotFound() {
   return (
     <main className='min-h-screen bg-black text-white flex flex-col items-center justify-center p-4 text-center'>
       <div className='flex flex-col items-center gap-8 z-10'>
-        {/* Large 404 Text */}
         <h1 className='text-[8rem] md:text-[12rem] xl:text-[16rem] leading-none font-bold text-[var(--color-primary)] font-oswald'>
           404
         </h1>
@@ -24,9 +20,7 @@ export default function NotFound() {
         </div>
 
         <div className='mt-8'>
-          <Link href='/'>
-            <FxActionButton onClick={() => {}}>Volver al inicio</FxActionButton>
-          </Link>
+          <Link href='/'>Volver al inicio</Link>
         </div>
       </div>
 

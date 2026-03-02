@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
 import { FxActionButton } from '../components/FxButton/FxActionButton'
@@ -99,9 +100,7 @@ export default function CopyrightPage() {
         </article>
 
         <div className='pt-8 border-t border-white/10'>
-          <Link href='/'>
-            <FxActionButton onClick={() => {}}>Volver al inicio</FxActionButton>
-          </Link>
+          <Link href='/'>Volver al inicio</Link>
         </div>
       </div>
     </main>
