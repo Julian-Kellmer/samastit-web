@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { FxButtonBase } from '@/app/components/FxButton/FxButton'
 
@@ -10,11 +10,11 @@ type OrderData = {
   error?: string
 }
 
-export default function SuccessPage() {
+function SuccessContent() {
   const searchParams = useSearchParams()
-  const orderId = searchParams?.get('orderId') || searchParams?.get('external_reference')
+  const orderId =
+    searchParams?.get('orderId') || searchParams?.get('external_reference')
   const [order, setOrder] = useState<OrderData | null>(null)
-
   useEffect(() => {
     if (!orderId) return
 
@@ -85,5 +85,18 @@ export default function SuccessPage() {
         <FxButtonBase>Contactame por WhatsApp ↗</FxButtonBase>
       </a>
     </div>
+  )
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className='min-h-screen flex items-center justify-center text-foreground/60'>
+          Cargando...
+        </div>
+      }>
+      <SuccessContent />
+    </Suspense>
   )
 }
