@@ -12,9 +12,10 @@ type OrderData = {
 export default function SuccessPage({
   searchParams,
 }: {
-  searchParams: { orderId?: string }
+  searchParams: { orderId?: string; external_reference?: string }
 }) {
-  const orderId = searchParams?.orderId
+  // Mercado Pago suele mandar external_reference si no pasamos el param en crudo
+  const orderId = searchParams?.orderId || searchParams?.external_reference
   const [order, setOrder] = useState<OrderData | null>(null)
 
   useEffect(() => {
