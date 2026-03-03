@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { FxButtonBase } from '@/app/components/FxButton/FxButton'
 
 type OrderData = {
@@ -9,13 +10,9 @@ type OrderData = {
   error?: string
 }
 
-export default function SuccessPage({
-  searchParams,
-}: {
-  searchParams: { orderId?: string; external_reference?: string }
-}) {
-  // Mercado Pago suele mandar external_reference si no pasamos el param en crudo
-  const orderId = searchParams?.orderId || searchParams?.external_reference
+export default function SuccessPage() {
+  const searchParams = useSearchParams()
+  const orderId = searchParams?.get('orderId') || searchParams?.get('external_reference')
   const [order, setOrder] = useState<OrderData | null>(null)
 
   useEffect(() => {

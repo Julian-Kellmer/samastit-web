@@ -11,11 +11,15 @@ async function fetchPayment(paymentId: string) {
   const data = await res.json().catch(() => ({}));
   return { ok: res.ok, status: res.status, data };
 }
+
+
 function mapStatus(s: string | undefined) {
   if (s === "approved") return "PAID";
   if (s === "rejected" || s === "cancelled" || s === "refunded" || s === "charged_back") return "FAILED";
   return "PENDING";
 }
+
+
 export async function POST(req: Request) {
   if (!process.env.MP_WEBHOOK_SECRET || !process.env.MP_ACCESS_TOKEN) {
     console.error("[MP webhook] Missing MP_WEBHOOK_SECRET or MP_ACCESS_TOKEN");
