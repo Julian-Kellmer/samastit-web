@@ -87,10 +87,16 @@ export function MeliquinaForm() {
         mensaje_adicional: form.mensaje,
       }
 
-      await sendMeliquinaEmail(payload)
+      const response = await sendMeliquinaEmail(payload)
+
+      if (!response.success) {
+        setErrorMsg(response.error || 'Ocurrió un error al enviar tu consulta.')
+        return
+      }
+
       setSubmitted(true)
     } catch (err) {
-      console.error(err)
+      console.error('Error in handleSubmit:', err)
       setErrorMsg(
         'Ocurrió un error al enviar tu consulta. Por favor, intentá nuevamente.',
       )

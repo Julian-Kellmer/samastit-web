@@ -64,9 +64,9 @@ function SuccessContent() {
       </h1>
 
       {/* Status badge */}
-      <p className='text-sm text-foreground/50 uppercase tracking-widest'>
+      {/* <p className='text-sm text-foreground/50 uppercase tracking-widest'>
         Estado: <span className='text-primary/80'>{order.status}</span>
-      </p>
+      </p> */}
 
       {/* Sub-text */}
       <p className='text-foreground/60 max-w-md text-balance text-lg'>

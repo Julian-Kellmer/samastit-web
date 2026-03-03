@@ -19,7 +19,10 @@ export async function sendMeliquinaEmail(formData: {
 
   if (!serviceId || !publicKey || !privateKey) {
     console.error('Faltan credenciales de EmailJS en las variables de entorno.')
-    throw new Error('Error de configuración del servidor.')
+    return {
+      success: false,
+      error: 'Error de configuración en el servidor. Faltan variables.',
+    }
   }
 
   const payload = {
@@ -42,12 +45,18 @@ export async function sendMeliquinaEmail(formData: {
     if (!res.ok) {
       const errorText = await res.text()
       console.error('EmailJS error:', res.status, errorText)
-      throw new Error('Error al conectar con EmailJS.')
+      return {
+        success: false,
+        error: `Error al autenticar con EmailJS: ${errorText}`,
+      }
     }
 
     return { success: true }
   } catch (error) {
     console.error('sendMeliquinaEmail exception:', error)
-    throw new Error('No se pudo enviar el correo.')
+    return {
+      success: false,
+      error: 'Fallo la conexión con el servicio de email.',
+    }
   }
 }
