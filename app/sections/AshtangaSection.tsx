@@ -103,7 +103,7 @@ export default function AshtangaSection() {
               <div>
                 <PayButton
                   title='Ashtanga Basico'
-                  price={140}
+                  price={200000}
                   text='Comprar por mercado libre'
                 />
               </div>
@@ -144,7 +144,7 @@ export default function AshtangaSection() {
               <div>
                 <PayButton
                   title='Ashtanga Completo'
-                  price={245}
+                  price={350000}
                   text='Comprar por mercado libre'
                 />
               </div>
