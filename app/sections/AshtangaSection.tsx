@@ -5,6 +5,8 @@ import MeliquinaAccordion from '../meliquina/_components/MeliquinaAccordion'
 // import Button from '../components/Button'
 import { FxActionButton } from '../components/FxButton/FxActionButton'
 import { PayButton } from '../components/PayButton.tsx/PayButton'
+import SmartVideo from '../components/SmartVideo'
+
 export default function AshtangaSection() {
   const [activeItem, setActiveItem] = useState<string | null>('info')
 
@@ -24,13 +26,11 @@ export default function AshtangaSection() {
             <div className='flex-2 relative w-full lg:w-1/2 aspect-video bg-white/10 rounded-lg overflow-hidden flex items-center justify-center group cursor-pointer'>
               {/* Video Placeholder */}
               <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent' />
-              <div className='w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
-                <svg
-                  className='w-6 h-6 ml-1 fill-white'
-                  viewBox='0 0 24 24'>
-                  <path d='M8 5v14l11-7z' />
-                </svg>
-              </div>
+              <SmartVideo
+                webmSrc='./video/PabloVideo.webm'
+                mp4Src='./video/PabloVideo.mp4'
+                poster='./video/portada.png'
+              />
             </div>
 
             <div className='flex-1 flex flex-col h-full justify-between '>
