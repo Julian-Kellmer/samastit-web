@@ -9,13 +9,17 @@ import Link from 'next/link'
 const page = () => {
   // Sample images - Replace these with your actual image URLs
   const sampleImages = [
-    '/images/example3.jpg',
-    '/images/example4.jpg',
-    '/images/example5.jpg',
-    '/images/example1.jpg', // Replace with real paths
-    '/images/example2.jpg',
-    '/images/example6.jpg',
-    '/images/example7.jpg',
+    '/meliquina/1.jpg', // Replace with real paths
+    '/meliquina/2.jpg',
+    '/meliquina/3.jpg',
+    '/meliquina/4.jpg',
+    '/meliquina/5.jpg',
+    '/meliquina/6.jpg',
+    '/meliquina/7.jpg',
+    '/meliquina/8.jpeg',
+    '/meliquina/9.jpeg',
+    '/meliquina/10.jpeg',
+    '/meliquina/11.jpeg',
   ]
 
   return (

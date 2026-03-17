@@ -5,12 +5,18 @@ import ImageMarquee from '../components/ImageMarquee'
 
 export default function AboutSection() {
   const imagesSamastit = [
-    '/images/Originals1.jpg',
-    '/images/Originals2.jpg',
-    '/images/Originals3.jpg',
-    '/images/Originals4.jpg',
-    '/images/Originals5.jpg',
-    '/images/Originals6.jpg',
+    '/images/pablo1.jpg',
+    '/images/pablo2.jpg',
+    '/images/pablo3.jpg',
+    '/images/pablo4.jpg',
+    '/images/pablo5.jpg',
+    '/images/pablo6.jpg',
+    '/images/pablo7.jpg',
+    '/images/pablo8.jpg',
+    '/images/pablo9.jpg',
+    '/images/pablo10.jpg',
+    '/images/pablo11.jpg',
+    '/images/pablo12.jpeg',
   ]
 
   return (

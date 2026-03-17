@@ -69,9 +69,7 @@ export default function HorizontalScrollSection() {
                 <br />
                 REALIZADOR
               </h1>
-              <p className='text-body px-3'>
-                La práctica de intervenir tu energía
-              </p>
+              <p className='text-body px-3'>La práctica de intervenir</p>
             </div>
           </div>
           <div className='absolute flex justify-end items-end top-0 left-0 w-full h-screen pointer-events-none'>
@@ -91,10 +89,10 @@ export default function HorizontalScrollSection() {
           <div className='py-8 md:py-16 flex-1 flex flex-col items-start justify-center w-full max-w-5xl text-start gap-12'>
             <p className='text-h4 text-2xl md:text-4xl'>
               Después de 27 años practicando y enseñando yoga, hoy comparto una
-              forma clara, accesible y adaptable de trabajar con tu energía.{' '}
-              <br />
-              También diseño y forjo amuletos energéticos: piezas creadas a mano
-              que acompañan procesos personales de transformación.
+              forma clara, accesible y adaptable de intervenir tu cuerpo y tu
+              energía. <br />
+              También diseño y forjo amuletos: piezas creadas a mano que
+              acompañan procesos de transformación.
             </p>
             <button
               onClick={() => setIsModalOpen(true)}
