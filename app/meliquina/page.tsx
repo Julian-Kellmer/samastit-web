@@ -27,7 +27,8 @@ const page = () => {
       <div className='container flex flex-col items-start px-4 py-12 text-center h-[80svh] justify-center'>
         <h1 className='text-display text-5xl font-bold mb-4'>EXP.MELIQUINA</h1>
         <p className='text-body text-xl text-gray-300 mb-12'>
-          La naturaleza como maestra
+          No se trata de conquistar la montaña, sino de permitir que la
+                montaña te conquiste a ti
         </p>
       </div>
 
@@ -36,7 +37,6 @@ const page = () => {
         <ImageMarquee images={sampleImages} />
         <ImageMarquee
           images={sampleImages}
-          reverse={true}
           height={300}
         />
       </div>
@@ -46,7 +46,7 @@ const page = () => {
         className='md:px-8 mt-8 min-h-[50svh] flex flex-col items-center col-span-full gap-16'>
         <div className='max-w-4xl text-center h-[80svh] flex justify-center items-center  '>
           <h2 className='text-h4'>
-            <TextRevealOnScroll text='Con el paso de los años, el espacio se fue ampliando y completando con distintos elementos que hoy forman parte de la experiencia. El domo, el sauna, la pileta junto al sauna intervenida con cobre y el arroyo cumplen una función concreta dentro del lugar. La propuesta es que puedas conocer qué aporta cada espacio y cómo puede ser vivido según la intención de quien lo habita.' />
+            <TextRevealOnScroll text='Como extensión de la práctica, creé un espacio natural en Villa Lago Meliquina, Patagonia Argentina. Rodeado de bosque autóctono, con agua de vertiente y energía solar, el lugar fue concebido como un contenedor para procesos profundos: retiros, estancias personales y alquiler para facilitadores, terapeutas y artistas que buscan un entorno de silencio, concentración y creación.' />
           </h2>
         </div>
 

@@ -1,12 +1,20 @@
 import ProductCard from '../../components/ProductCard'
 
 const joyas = [
+
   {
-    title: 'Botón Antena',
+    title: 'Botella',
     description:
-      'Presencia sutil · Uso diario.\n\nBotón de cobre macizo para llevar en la ropa. Funciona como un punto de conducción energética discreto y constante.\n\nDisponible en versión lisa o grabada con símbolo, inicial o tótem personal.\n\nUn amuleto silencioso que acompaña sin imponerse.',
-    price: 45000,
-    img: '/joyas/joya1.png',
+      'Hidratación consciente · Tradición y diseño. Botella de vidrio azul con espiral de cobre puro. Inspirada en saberes ayurvédicos, integra materiales asociados a la purificación, la conservación y el equilibrio. El cobre aporta propiedades naturales y el azul evoca calma, claridad y armonía en cada toma.',
+    price: 18000,
+    img: '/joyas/botella.jpeg',
+  },
+  {
+    title: 'Kit Espirales Yogamat',
+    description:
+      'Polaridad · Foco   Dos espirales de cobre para el mat.  Crean polaridad.  Definen puntos. Dirigen la atención.',
+    price: 66000,
+    img: '/joyas/mat.jpeg',
   },
   {
     title: 'Flor de la vida',
@@ -112,7 +120,7 @@ const joyas = [
     description:
       'Centro · Protección\n\nMoneda de cobre puro con doble imán.\nEl escudo central representa la identidad; las doce estrellas, los ciclos completos.\n\nUna pieza pensada para fortalecer el centro personal y acompañar procesos de protección consciente.',
     price: 66000,
-    img: '/joyas/joya20.jpg',
+    img: '/joyas/joya20.png',
   },
 ]
 

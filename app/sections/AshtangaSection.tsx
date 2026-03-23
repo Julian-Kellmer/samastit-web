@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 import MeliquinaAccordion from '../meliquina/_components/MeliquinaAccordion'
 // import Button from '../components/Button'
 import { FxActionButton } from '../components/FxButton/FxActionButton'
-import { PayButton } from '../components/PayButton.tsx/PayButton'
 import SmartVideo from '../components/SmartVideo'
 
 export default function AshtangaSection() {
@@ -101,11 +100,16 @@ export default function AshtangaSection() {
                 </ul>
               </div>
               <div>
-                <PayButton
-                  title='Ashtanga Basico'
-                  price={200000}
-                  text='Comprar por mercado libre'
-                />
+                <FxActionButton
+                  onClick={() => {
+                    window.open(
+                      'https://wa.me/+5491158044328?text=Hola,%20quiero%20consultar%20por%20la%20opcion%20Basico%20de%20Ashtanga',
+                      '_blank'
+                    )
+                  }}
+                  disabled={false}>
+                  Contactar
+                </FxActionButton>
               </div>
             </div>
 
@@ -142,11 +146,16 @@ export default function AshtangaSection() {
                 </ul>
               </div>
               <div>
-                <PayButton
-                  title='Ashtanga Completo'
-                  price={350000}
-                  text='Comprar por mercado libre'
-                />
+                <FxActionButton
+                  onClick={() => {
+                    window.open(
+                      'https://wa.me/+5491158044328?text=Hola,%20quiero%20consultar%20por%20la%20opcion%20Completo%20de%20Ashtanga',
+                      '_blank'
+                    )
+                  }}
+                  disabled={false}>
+                  Contactar
+                </FxActionButton>
               </div>
             </div>
 

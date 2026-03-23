@@ -84,10 +84,10 @@ const MeliquinaAccordion: React.FC<MeliquinaAccordionProps> = ({
 
             <div
               className={`
-                flex-1 overflow-hidden transition-all duration-700 opacity-0 min-w-0
-                ${isActive ? 'opacity-100 delay-200' : 'opacity-0'}
+                overflow-hidden transition-all duration-700 min-w-0
+                ${isActive ? 'flex-1 opacity-100 delay-200 relative h-auto' : 'absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden'}
               `}>
-              <div className='p-2  w-full h-full flex flex-col justify-center min-w-[300px]'>
+              <div className='p-2 w-full h-full flex flex-col justify-center min-w-[300px]'>
                 {item.content}
               </div>
             </div>

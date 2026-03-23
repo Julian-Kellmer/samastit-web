@@ -1,30 +1,34 @@
 'use client'
 
-import Image from 'next/image'
-import SamastitCard from '../samastit/_components/SamastitCard'
 import { FxLinkButton } from '../components/FxButton/FxLinkButton'
+import ProductCard from '../components/ProductCard'
+
+const masVendidos = [
+  {
+    title: 'Botella',
+    description:
+      'Hidratación consciente · Tradición y diseño. Botella de vidrio azul con espiral de cobre puro. Inspirada en saberes ayurvédicos, integra materiales asociados a la purificación, la conservación y el equilibrio. El cobre aporta propiedades naturales y el azul evoca calma, claridad y armonía en cada toma.',
+    price: 18000,
+    img: '/joyas/botella.jpeg',
+  },
+ {
+    title: 'Kit Espirales Yogamat',
+    description:
+      'Polaridad · Foco   Dos espirales de cobre para el mat.  Crean polaridad.  Definen puntos. Dirigen la atención.',
+    price: 66000,
+    img: '/joyas/mat.jpeg',
+  },
+  {
+    title: 'Patron 369',
+    description: 'Intención · Foco · Voluntad.\nAnillo-sello de cobre puro con doble imán.',
+    price: 66000,
+    img: '/joyas/joya3.png',
+  },
+]
 
 export default function AmuletosSection() {
   return (
     <section className='relative min-h-screen bg-black text-white  py-24 overflow-hidden layout-wrap'>
-      {/* Background Images */}
-      <div className='absolute bottom-[-45%] left-0 -translate-y-1/2 w-[40vw] h-[80vh] z-0 opacity-80 pointer-events-none'>
-        <Image
-          src='/images/recortada.png'
-          alt='Amuletos Background Left'
-          fill
-          className='object-contain object-left opacity-35'
-        />
-      </div>
-      <div className='absolute top-0 right-0 -translate-y-1/2 w-[40vw] h-[80vh] z-0 opacity-80 pointer-events-none'>
-        <Image
-          src='/images/recortada2.png'
-          alt='Amuletos Background Right'
-          fill
-          className='object-contain object-left opacity-35'
-        />
-      </div>
-
       {/* Content Container */}
       <div className='layout-grid relative z-10 h-full'>
         {/* Header Section */}
@@ -34,103 +38,41 @@ export default function AmuletosSection() {
           </h2>
 
           <div className='space-y-6 max-w-2xl'>
-            <blockquote className='text-h5 font-light italic text-white/80 border-l-2 border-primary pl-6'>
+            <blockquote className='text-body font-light italic text-white/80 border-l-2 border-primary pl-6'>
               “El objeto ritual es un recordatorio físico de una realidad
               espiritual.” - Carl Jung.
             </blockquote>
 
-            <p className='text-body text-white/70 pl-6'>
-              Los Amuletos{' '}
-              <span className='text-primary font-bold'>Samastit</span>{' '}
-              materializan una intención. Interaccionan con el cuerpo y el campo
-              energético, generando un punto de orden y conducción. Pueden
-              integrarse a una práctica o acompañar de manera autónoma a quien
-              elige trabajar su energía desde lo cotidiano.
-            </p>
-            <p className='text-body text-white/70 pl-6'>
-              Los Amuletos{' '}
-              <span className='text-primary font-bold'>Samastit</span> son
-              herramientas de conciencia. Actúan como puntos de conducción entre
-              el cuerpo y el entorno, acompañando procesos personales más allá
-              de una práctica específica. Son piezas que sostienen intención y
-              presencia en lo cotidiano.
-            </p>
-            <p className='text-body text-white/70 pl-6'>
-              Los Amuletos{' '}
-              <span className='text-primary font-bold'>Samastit</span> son
-              herramientas de conciencia. Piezas diseñadas para interactuar con
-              el cuerpo y el campo personal, ayudando a sostener presencia,
-              intención y orden energético en la vida diaria. Pueden acompañar
-              una práctica, pero también funcionar por sí mismos como
-              recordatorios materiales de una frecuencia interna.
-            </p>
           </div>
 
-          <div className='md:self-end'>
-            <FxLinkButton href='/joyas'>Comprar</FxLinkButton>
+          <div className='md:self-end h-0 overflow-hidden'>
+            {/* Ocultamos temporalmente el boton de comprar superior */}
           </div>
         </div>
 
-        {/* Cards Section */}
-        <div className=' col-span-full md:col-start-2 md:col-end-8 flex flex-col gap-12'>
-          <h3 className='text-center text-h4 font-light text-white/80 uppercase tracking-widest'>
-            Metales elegidos con intencion
+        {/* Más Vendidos Section */}
+        <div className='col-span-full md:col-start-2 md:col-end-8 flex flex-col gap-8 md:mt-0'>
+          <h3 className='text-h4 font-light text-white/80 tracking-widest uppercase text-left'>
+Ademas de Joyas
           </h3>
 
-          <div className='container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 md:mb-32 max-w-6xl'>
-            <SamastitCard
-              title='Oro'
-              description='Centro y reorganización. Trabaja sobre tensiones y favorece equilibrio interno.'>
-              {/* Abstract Lines Icon Placeholder */}
-              <svg
-                className='w-16 h-16'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='1'>
-                <path d='M4 20v-5h16v5M4 10V5h16v5' />
-              </svg>
-            </SamastitCard>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 w-full group/grid'>
+            {masVendidos.map((joya, i) => (
+              <ProductCard
+                key={i}
+                title={joya.title}
+                description={joya.description}
+                price={joya.price}
+                img={joya.img}
+              />
+            ))}
+          </div>
 
-            <SamastitCard
-              title='Plata'
-              description='Afinación y claridad. Favorece calma mental y sensibilidad perceptiva.'>
-              {/* Dots/Circle Icon Placeholder */}
-              <svg
-                className='w-16 h-16'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='1'>
-                <circle
-                  cx='12'
-                  cy='12'
-                  r='8'
-                  strokeDasharray='4 4'
-                />
-                <circle
-                  cx='12'
-                  cy='12'
-                  r='2'
-                />
-              </svg>
-            </SamastitCard>
-
-            <SamastitCard
-              title='Cobre'
-              description='Estructura y activación. Conductor ancestral asociado a equilibrio y fuerza vital.'>
-              {/* Grid/Mesh Icon Placeholder */}
-              <svg
-                className='w-16 h-16'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='1'>
-                <path d='M4 4h16v16H4z M8 4v16M16 4v16M4 8h16M4 16h16' />
-              </svg>
-            </SamastitCard>
+          <div className='w-full flex justify-end mt-12'>
+            <FxLinkButton href='/joyas'>Ver todos</FxLinkButton>
           </div>
         </div>
+        
       </div>
     </section>
   )

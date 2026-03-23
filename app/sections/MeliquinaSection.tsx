@@ -22,26 +22,18 @@ export default function MeliquinaSection() {
     <section className='layout-wrap relative min-h-screen bg-black text-white py-24 overflow-hidden'>
       <div className='layout-grid gap-y-12'>
         {/* Header Content */}
-        <div className='col-span-full md:col-start-2 md:col-end-12 flex flex-col items-start gap-8 mb-12'>
-          <h2 className='text-[3rem] md:text-[8rem] text-primary uppercase font-bold tracking-tighter leading-none font-oswald'>
+        <div className='col-span-full md:col-start-1 md:col-end-12 flex flex-col items-start gap-4  mb-12'>
+          <h2 className='text-display text-primary uppercase font-bold tracking-tighter leading-none font-oswald'>
             MELIQUINA
           </h2>
 
-          <div className='flex flex-col md:flex-row gap-12 justify-between items-end w-full'>
-            <div className='flex flex-col gap-6 max-w-4xl'>
-              <h3 className='text-h4 font-light leading-tight'>
+          <div className='flex flex-col md:flex-row  justify-between items-end w-full'>
+            <div className='flex flex-col  max-w-4xl'>
+              <h3 className='text-body '>
                 No se trata de conquistar la montaña, sino de permitir que la
                 montaña te conquiste a ti
               </h3>
-              <p className='text-body text-white/70 max-w-2xl'>
-                Como extensión de la práctica, creé un espacio natural en Villa
-                Lago Meliquina, Patagonia Argentina. Rodeado de bosque
-                autóctono, con agua de vertiente y energía solar, el lugar fue
-                concebido como un contenedor para procesos profundos: retiros,
-                estancias personales y alquiler para facilitadores, terapeutas y
-                artistas que buscan un entorno de silencio, concentración y
-                creación
-              </p>
+              
             </div>
 
             <div className='flex flex-wrap gap-4 shrink-0'>
@@ -63,11 +55,7 @@ export default function MeliquinaSection() {
             images={images}
             height={350}
           />
-          <ImageMarquee
-            images={images}
-            reverse={true}
-            height={350}
-          />
+          
         </div>
       </div>
     </section>

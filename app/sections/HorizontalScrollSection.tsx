@@ -105,13 +105,11 @@ export default function HorizontalScrollSection() {
         {/* Panel 3: Title + ImageMarquee */}
         <div className='z-10 panel w-full min-h-[50vh] md:w-screen md:h-[80svh] flex-shrink-0 flex flex-col justify-center relative'>
           <div className='layout-grid w-full h-full text-center z-10 px-4'>
-            <div className='col-span-full md:col-start-2 md:col-span-6 h-full flex flex-col justify-center items-center gap-12 md:gap-24 py-16 md:py-0'>
-              <h2 className='text-6xl md:text-[12vw] font-bold uppercase tracking-tighter leading-none text-red-600'>
-                SAMASTIT
-              </h2>
-              <h4 className='text-h4 px-4'>
-                Samastit es una práctica de yoga creada para que encuentres tu
-                equilibrio
+            <div className='col-span-full md:col-start-2 md:col-span-6 h-full flex flex-col justify-center items-center gap-12 py-16 md:py-0'>
+              <h2 className='text-display'>SAMASTIT</h2>
+              <h4 className='text-body px-4'>
+                Sabiduría milenaria, un camino porpio para acceder al estado de
+                yoga
               </h4>
             </div>
           </div>

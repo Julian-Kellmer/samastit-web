@@ -30,19 +30,14 @@ const TextRevealOnScroll: React.FC<TextRevealOnScrollProps> = ({
   duration = 1,
   stagger = 0.1,
   y = 24,
-  start = 'top 75%',
+  start = 'top 50%',
   end = 'bottom 25%',
-  scrub = 0.3,
+  scrub = false,
   ease = 'power2.out',
 }) => {
   const containerRef = useRef<HTMLElement>(null)
   const wordsRef = useRef<(HTMLSpanElement | null)[]>([])
 
-  // Split text into words, preserving spaces visually by margins or spans
-  // We'll split by spaces but render them with a gap or whitespace.
-  // Ideally, ' ' splitting is fine if we use flex-wrap gap, OR we just put a space after each word.
-  // The user requested: "Separar palabras preservando espacios y saltos de línea"
-  // Simple approach: Split by whitespace, map, and add a trailing space to each word span.
   const words = text.split(/(\s+)/).filter((w) => w.length > 0)
 
   useEffect(() => {
@@ -71,7 +66,7 @@ const TextRevealOnScroll: React.FC<TextRevealOnScrollProps> = ({
             scrub: scrub,
             // markers: true, // specific for debug, uncomment if needed
           },
-        }
+        },
       )
     }, containerRef) // Scope to container
 

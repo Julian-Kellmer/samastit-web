@@ -1,70 +1,81 @@
 'use client'
 
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 
 interface ImageMarqueeProps {
   images: string[]
-  reverse?: boolean
   height?: number
 }
 
 const ImageMarquee: React.FC<ImageMarqueeProps> = ({
   images,
-  reverse = false,
   height = 375,
 }) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+
   if (!images || images.length === 0) return null
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' })
+    }
+  }
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' })
+    }
+  }
+
+  const displayImages = [...images, ...images, ...images, ...images]
 
   return (
     <div
-      className='w-full overflow-hidden whitespace-nowrap select-none pointer-events-none'
+      className='relative w-full overflow-hidden group select-none'
       aria-hidden='true'>
+      
       <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
         }
-        .animate-marquee {
-          animation: marquee 150s linear infinite;
-        }
-        .animate-marquee-reverse {
-          animation: marquee 300s linear infinite reverse;
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
 
-      {/* 
-         Height: custom fixed, clamped, or default 375px.
-      */}
+      <button
+        onClick={scrollLeft}
+        aria-label="Anterior"
+        className='absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-black/90 hover:scale-105 active:scale-95'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+
+      <button
+        onClick={scrollRight}
+        aria-label="Siguiente"
+        className='absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-black/90 hover:scale-105 active:scale-95'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+
       <div
         className='flex items-center'
         style={{ height: `min(${height}px, 60vh)` }}>
         <div
-          className={`flex w-max ${
-            reverse ? 'animate-marquee-reverse' : 'animate-marquee'
-          }`}>
-          {/* Render images twice for seamless loop */}
-          {[...images, ...images].map((src, index) => (
+          ref={scrollContainerRef}
+          className='flex w-full h-full py-4 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar'>
+          {displayImages.map((src, index) => (
             <div
               key={index}
-              className='flex-shrink-0 mx-2' // 16px gap total (8px per side)
-              style={{ height: '100%' }}>
+              className='flex-shrink-0 mx-2 relative h-full snap-center'
+              style={{ aspectRatio: '3 / 4' }}>
               <Image
-                width={750}
-                height={height}
+                fill
+                sizes="(max-width: 768px) 50vw, 30vw"
                 src={src}
                 alt=''
-                className='grayscale-100 object-cover'
-                style={{
-                  height: '100%',
-                  width: 'auto',
-                  maxHeight: `${height}px`,
-                  maxWidth: '750px',
-                }}
+                className='grayscale-100 object-cover rounded-md'
                 draggable={false}
               />
             </div>

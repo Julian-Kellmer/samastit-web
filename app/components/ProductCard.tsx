@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { PayButton } from './PayButton.tsx/PayButton'
+import { FxActionButton } from './FxButton/FxActionButton'
 import Image from 'next/image'
 
 interface ProductCardProps {
@@ -123,12 +123,17 @@ export default function ProductCard({
           </h3>
           {price && (
             <div className='flex items-center gap-3 ml-auto'>
-              {/* Botón de compra de Mercado Pago explícito */}
-              <PayButton
-                title={title}
-                price={price}
-                text='Comprar'
-              />
+              {/* Botón de consultar por WhatsApp */}
+              <FxActionButton
+                onClick={() => {
+                  window.open(
+                    `https://wa.me/+5491158044328?text=Hola,%20quiero%20consultar%20por:%20${encodeURIComponent(title)}`,
+                    '_blank'
+                  )
+                }}
+                disabled={false}>
+                Contactar
+              </FxActionButton>
 
               {/* Precio estático y siempre visible */}
               <div className='px-3 py-1 bg-white/10 rounded min-w-[70px] text-center'>
