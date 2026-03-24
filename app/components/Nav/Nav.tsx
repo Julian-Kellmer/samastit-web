@@ -13,20 +13,20 @@ interface NavProps {
 
 const navItems = [
   {
-    title: 'Experiencia meliquina',
-    href: '/meliquina',
+    title: 'Metodo Samastit',
+    href: '/samastit',
   },
   {
-    title: 'Videos de ashtanga',
+    title: 'Ashtanga',
     href: '/#ashtanga',
   },
   {
-    title: 'Joyas energeticas',
+    title: 'Joyas',
     href: '/joyas',
   },
   {
-    title: 'Metodo samasthit',
-    href: '/samastit',
+    title: 'Meliquina',
+    href: '/meliquina',
   },
 ]
 
@@ -49,7 +49,6 @@ export default function Nav({ onClose }: NavProps) {
       role='dialog'
       aria-modal='true'>
       <div className={styles.body}>
-        
         {navItems.map((data, index) => {
           return (
             <motion.div

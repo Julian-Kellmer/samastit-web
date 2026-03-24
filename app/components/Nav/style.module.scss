@@ -9,8 +9,8 @@
   z-index: 999; /* Below button but above page */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding-left: 32px;
+  justify-content: center;
+  padding-left: 64px;
   padding-right: 32px;
   padding-top: 124px;
   padding-bottom: 24px;
@@ -26,7 +26,10 @@
   .body {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    align-items: start;
+    
+    height: 100%;
+
 
     .header {
       text-transform: uppercase;
@@ -40,7 +43,7 @@
     a {
       text-decoration: none;
       color: white;
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 300;
       transition: color 0.3s;
       font-family: var(--font-oswald);
