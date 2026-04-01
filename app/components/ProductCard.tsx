@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import { FxActionButton } from './FxButton/FxActionButton'
 import Image from 'next/image'
 
@@ -13,117 +13,64 @@ interface ProductCardProps {
   img?: string
 }
 
-export default function ProductCard({
+function ProductModal({
   title,
   description,
   price,
   tag,
-  children,
   img,
-}: ProductCardProps) {
-  const [isOpen, setIsOpen] = useState(false)
-  const cardRef = useRef<HTMLDivElement>(null)
-
-  // Auto-close when out of viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) {
-          setIsOpen(false)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current)
-    }
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
-
-  const handleInfoClick = (e: React.MouseEvent) => {
-    e.stopPropagation() // Prevent triggering card click if handled elsewhere
-    setIsOpen(!isOpen)
-  }
-
+  children,
+  onClose,
+}: ProductCardProps & { onClose: () => void }) {
   return (
     <div
-      ref={cardRef}
-      className={`flex flex-col gap-3 group cursor-pointer transition-all duration-300
-        ${
-          isOpen
-            ? 'filter-none scale-105 opacity-100 z-30'
-            : 'group-hover/grid:blur-[2px] group-hover/grid:scale-95 group-hover/grid:opacity-50 hover:!filter-none hover:!scale-105 hover:!opacity-100 hover:z-30'
-        }
-      `}>
-      {/* Image Container with Badge */}
-      <div className='relative aspect-square w-full rounded-lg overflow-hidden  transition-all duration-300 '>
-        {/* Darkening Overlay */}
-        <div
-          className={`absolute inset-0 bg-black/60 transition-opacity duration-300 z-10
-          ${isOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}
-        `}
-        />
+      className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm'
+      onClick={onClose}>
+      <div
+        className='relative bg-[#1a1a1a] rounded-xl overflow-hidden max-w-lg w-full max-h-[90vh] overflow-y-auto'
+        onClick={(e) => e.stopPropagation()}>
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className='absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors'>
+          <span className='text-white text-lg leading-none'>×</span>
+        </button>
 
-        {/* Content Overlay */}
-        <div
-          className={`absolute inset-0 p-6 flex flex-col justify-center items-center text-center transition-opacity duration-300 z-20
-          ${isOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}
-        `}>
-          <p className='text-body text-white/90'>
-            {description || 'Descripción del amuleto...'}
-          </p>
-        </div>
-
-        {/* Badge */}
-        {tag && (
-          <div className='absolute top-3 left-3 px-3 py-1 bg-[#D97777] rounded-full z-20'>
-            <span className='text-[10px] uppercase font-bold text-black block leading-none'>
-              {tag}
-            </span>
-          </div>
-        )}
-
-        {/* Info Button */}
-        <div
-          onClick={handleInfoClick}
-          className={`absolute top-3 right-3 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center border transition-colors z-20 cursor-pointer
-          ${
-            isOpen
-              ? 'bg-white/20 border-white/40' // Active state style
-              : 'bg-white/10 border-white/20 group-hover:bg-white/20'
-          }
-        `}>
-          <span className='text-xs font-bold text-white'>!</span>
-        </div>
-
-        {/* Visual Content (Image or Icon) */}
-        <div className='absolute inset-0 flex items-center justify-center'>
-          {children}
-          {img && (
-            <Image
-              fill
-              src={img}
-              alt={title}
-              className='object-cover w-full h-full'
-            />
+        {/* Image */}
+        <div className='relative aspect-square w-full'>
+          {tag && (
+            <div className='absolute top-3 left-3 px-3 py-1 bg-[#D97777] rounded-full z-10'>
+              <span className='text-[10px] uppercase font-bold text-black block leading-none'>
+                {tag}
+              </span>
+            </div>
           )}
+          <div className='absolute inset-0 flex items-center justify-center'>
+            {children}
+            {img && (
+              <Image
+                fill
+                src={img}
+                alt={title}
+                className='object-cover w-full h-full'
+              />
+            )}
+          </div>
         </div>
-      </div>
 
-      {/* Product Info */}
-      <div className='flex flex-col gap-1'>
-        {/* Title & Price Row */}
-        <div className='flex justify-between items-baseline'>
-          <h3 className='text-h6 text-white group-hover:underline decoration-white/50 '>
-            {title}
-          </h3>
+        {/* Info */}
+        <div className='flex flex-col gap-2 p-5'>
+          <h3 className='text-h6 text-white'>{title}</h3>
+
+          {description && (
+            <p className='text-body text-white/70 text-sm'>{description}</p>
+          )}
+
           {price && (
-            <div className='flex items-center gap-3 ml-auto'>
-              {/* Botón de consultar por WhatsApp */}
+            <div className='flex items-center justify-between mt-2'>
+              <span className='text-sm font-mono text-white/80'>
+                ${price.toLocaleString('es-AR')}
+              </span>
               <FxActionButton
                 onClick={() => {
                   window.open(
@@ -134,17 +81,102 @@ export default function ProductCard({
                 disabled={false}>
                 Contactar
               </FxActionButton>
-
-              {/* Precio estático y siempre visible */}
-              <div className='px-3 py-1 bg-white/10 rounded min-w-[70px] text-center'>
-                <span className='block text-xs font-mono text-white/80'>
-                  ${price.toLocaleString('es-AR')}
-                </span>
-              </div>
             </div>
           )}
         </div>
       </div>
     </div>
+  )
+}
+
+export default function ProductCard({
+  title,
+  description,
+  price,
+  tag,
+  children,
+  img,
+}: ProductCardProps) {
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const isTruncated = description && description.length > 100
+  const shortDescription = isTruncated
+    ? description!.slice(0, 100).trimEnd() + '…'
+    : description
+
+  return (
+    <>
+      <div className='flex flex-col gap-3 cursor-pointer transition-transform duration-300 hover:scale-105'>
+        {/* Image */}
+        <div className='relative aspect-square w-full rounded-lg overflow-hidden'>
+          {tag && (
+            <div className='absolute top-3 left-3 px-3 py-1 bg-[#D97777] rounded-full z-10'>
+              <span className='text-[10px] uppercase font-bold text-black block leading-none'>
+                {tag}
+              </span>
+            </div>
+          )}
+          <div className='absolute inset-0 flex items-center justify-center'>
+            {children}
+            {img && (
+              <Image
+                fill
+                src={img}
+                alt={title}
+                className='object-cover w-full h-full'
+              />
+            )}
+          </div>
+        </div>
+
+        {/* Info */}
+        <div className='flex flex-col gap-1'>
+          <h3 className='text-h6 text-white'>{title}</h3>
+
+          {shortDescription && (
+            <p className='text-body text-white/70 text-sm'>
+              {shortDescription}
+              {isTruncated && (
+                <button
+                  onClick={() => setModalOpen(true)}
+                  className='ml-1 text-red-600 underline underline-offset-2 text-sm hover:text-red-500 transition-colors'>
+                  ver más
+                </button>
+              )}
+            </p>
+          )}
+
+          {price && (
+            <div className='flex items-center justify-between mt-1'>
+              <span className='text-sm font-mono text-white/80'>
+                ${price.toLocaleString('es-AR')}
+              </span>
+              <FxActionButton
+                onClick={() => {
+                  window.open(
+                    `https://wa.me/+5491158044328?text=Hola,%20quiero%20consultar%20por:%20${encodeURIComponent(title)}`,
+                    '_blank'
+                  )
+                }}
+                disabled={false}>
+                Contactar
+              </FxActionButton>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {modalOpen && (
+        <ProductModal
+          title={title}
+          description={description}
+          price={price}
+          tag={tag}
+          img={img}
+          onClose={() => setModalOpen(false)}>
+          {children}
+        </ProductModal>
+      )}
+    </>
   )
 }
