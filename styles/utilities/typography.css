@@ -116,3 +116,12 @@
     letter-spacing: var(--web-body-tracking);
   }
 }
+
+@media (min-width: 1024px) {
+  .text-display {
+    font-size: var(--desktop-display-size);
+    font-weight: var(--desktop-display-weight);
+    line-height: var(--desktop-display-line-height);
+    letter-spacing: var(--desktop-display-tracking);
+  }
+}

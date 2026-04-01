@@ -3,10 +3,16 @@
   --font-pp: "pp_neue_montreal", sans-serif;
   --font-oswald: "oswald", sans-serif;
 
-  /* Web */
-  --web-display-size: 195px;
-  --web-display-weight: 600;
-  --web-display-line-height: 175px;
+  /* Desktop (lg) */
+  --desktop-display-size: 10rem;
+  --desktop-display-weight: 700;
+  --desktop-display-line-height: 1;
+  --desktop-display-tracking: -0.02em;
+
+  /* Web (Tablet md) */
+  --web-display-size: 7rem;
+  --web-display-weight: 700;
+  --web-display-line-height: 1;
   --web-display-tracking: -0.02em;
 
   --web-h1-size: 61px;
@@ -45,9 +51,9 @@
   --web-body-tracking: -0.02em;
 
   /* Mobile */
-  --mobile-display-size: 64px;
-  --mobile-display-weight: 600;
-  --mobile-display-line-height: 64px;
+  --mobile-display-size: 3rem;
+  --mobile-display-weight: 700;
+  --mobile-display-line-height: 1;
   --mobile-display-tracking: -0.02em;
 
   --mobile-h1-size: 32px;

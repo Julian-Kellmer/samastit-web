@@ -21,7 +21,7 @@ const navItems = [
     href: '/#ashtanga',
   },
   {
-    title: 'Joyas',
+    title: 'Amuletos',
     href: '/joyas',
   },
   {

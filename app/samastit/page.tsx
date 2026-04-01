@@ -7,12 +7,12 @@ const page = () => {
     <section className='layout-wrap relative bg-black text-white py-32'>
       {/* HEADER SECTION */}
       <div className='container mx-auto max-w-6xl px-4 pt-8 pb-10 flex flex-col items-start  justify-center'>
-        <h1 className='text-display text-red-600 mb-4'>
+        <h1 className='text-display text-primary mb-4'>
           SAMASTIT
         </h1>
         <p className='text-body  max-w-2xl'>
           Modalidades y Acompañamientos <br/>
-          El proceso comienza con una introducción, que puede realizarse de forma presencial u online.A partir de ahí, podés sostener tu práctica en cualquiera de las dos modalidades.
+          El proceso comienza con una introducción, que puede realizarse de forma presencial u online. A partir de ahí, podés sostener tu práctica en cualquiera de las dos modalidades.
         </p>
       </div>      
       {/* PRICING / OPTIONS */}
@@ -24,7 +24,7 @@ const page = () => {
               <h2 className='text-h3'>
                 PRESENCIAL
               </h2>
-              <span className='text-body text-red-600'>
+              <span className='text-body '>
                 Palermo
               </span>
             </div>

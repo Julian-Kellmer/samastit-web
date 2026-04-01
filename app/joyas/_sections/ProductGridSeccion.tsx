@@ -3,20 +3,6 @@ import ProductCard from '../../components/ProductCard'
 const joyas = [
 
   {
-    title: 'Botella',
-    description:
-      'Hidratación consciente · Tradición y diseño. Botella de vidrio azul con espiral de cobre puro. Inspirada en saberes ayurvédicos, integra materiales asociados a la purificación, la conservación y el equilibrio. El cobre aporta propiedades naturales y el azul evoca calma, claridad y armonía en cada toma.',
-    price: 18000,
-    img: '/joyas/botella.jpeg',
-  },
-  {
-    title: 'Kit Espirales Yogamat',
-    description:
-      'Polaridad · Foco   Dos espirales de cobre para el mat.  Crean polaridad.  Definen puntos. Dirigen la atención.',
-    price: 66000,
-    img: '/joyas/mat.jpeg',
-  },
-  {
     title: 'Flor de la vida',
     description:
       'Orden · Armonía universal.\n\nAmuleto de cobre puro con doble imán.\n\nLa Flor de la Vida es un patrón geométrico presente en múltiples culturas, asociado a la estructura base de la creación.\n\nEl cobre actúa como conductor de esta simbología de orden y coherencia.',
@@ -51,17 +37,11 @@ const joyas = [
     price: 90000,
     img: '/joyas/joya6.png',
   },
-  {
-    title: 'Pulcera Lisa',
-    description:
-      'Ciclo · Continuidad.\n\nArgolla lisa de cobre puro, diseño abierto con salto de chispa y doble imán.\n\nLa forma circular representa el ciclo eterno, sin principio ni fin.\n\nUna pieza esencial que acompaña el flujo continuo del campo personal.',
-    price: 120000,
-    img: '/joyas/joya7.png',
-  },
+  
   {
     title: 'Pulsera Samastit código de red',
     description:
-      'Tecnología · Campo · Red.\n\nIntegra el Motor Bio-Magnético Samastit, combinando imán de neodimio y bobina de cobre para generar un campo toroidal activo y continuo.\n\nEn el reverso presenta un diseño de circuito electrónico que simboliza red, flujo de información y coherencia.\n\nRepresenta el cuerpo como circuito y la conciencia como nodo.',
+      'Tecnología · Campo · Red.\n\nEste medallón integra tecnología energética y simbología contemporánea.\n\nEn su interior incorpora el Motor Bio-Magnético Samastit: un imán de neodimio combinado con una bobina de cobre que generan un campo toroidal activo, estable y continuo, sin necesidad de energía externa. Este campo interactúa con el bio-campo del cuerpo, acompañando procesos de orden, foco y presencia.\n\nEn el reverso, presenta un diseño de circuito electrónico (PCB), símbolo de red descentralizada y flujo de información distribuida.\n\nEste medallón representa: el cuerpo como circuito, la conciencia como nodo y el valor como coherencia interna.\n\nUna pieza para quienes integran lo ancestral y lo tecnológico en un mismo campo.',
     price: 120000,
     img: '/joyas/joya10.png',
   },
@@ -122,6 +102,20 @@ const joyas = [
     price: 66000,
     img: '/joyas/joya20.png',
   },
+  {
+    title: 'Botella',
+    description:
+      'Hidratación consciente · Tradición y diseño. Botella de vidrio azul con espiral de cobre puro. Inspirada en saberes ayurvédicos, integra materiales asociados a la purificación, la conservación y el equilibrio. El cobre aporta propiedades naturales y el azul evoca calma, claridad y armonía en cada toma.',
+    price: 18000,
+    img: '/joyas/botella.jpeg',
+  },
+  {
+    title: 'Kit Espirales Yogamat',
+    description:
+      'Polaridad · Foco   Dos espirales de cobre para el mat.  Crean polaridad.  Definen puntos. Dirigen la atención.',
+    price: 66000,
+    img: '/joyas/mat.jpeg',
+  },
 ]
 
 export default function ProductGridSection() {
@@ -129,7 +123,6 @@ export default function ProductGridSection() {
     <section className='layout-wrap col-span-full md:col-start-2 md:col-end-[-2] flex flex-col gap-8 md:my-16 my-8'>
       {/* Header */}
       <div className='flex flex-col items-end w-full'>
-        <span className='text-body text-white/80'>Nuestros</span>
         <h2 className='text-[4rem] md:text-[8rem] leading-[0.8] text-[var(--color-primary)] font-[family-name:var(--font-oswald)] uppercase'>
           Amuletos
         </h2>

@@ -60,8 +60,8 @@ const ImageMarquee: React.FC<ImageMarqueeProps> = ({
       </button>
 
       <div
-        className='flex items-center'
-        style={{ height: `min(${height}px, 60vh)` }}>
+        className='flex items-center h-[280px] md:h-[var(--marquee-height)]'
+        style={{ '--marquee-height': `min(${height}px, 60vh)` } as React.CSSProperties}>
         <div
           ref={scrollContainerRef}
           className='flex w-full h-full py-4 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar'>

@@ -1,4 +1,19 @@
 @theme {
-  --color-primary: #ff0000;
+  --color-primary: #ffb852;
   --color-secondary: #ffb852;
+
+  --background-image-primary-gradient: linear-gradient(
+    to bottom,
+    #773200,
+    #ffb852
+  );
+}
+
+@layer utilities {
+  .text-primary {
+    background: linear-gradient(to right, #773200, #ffb852);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }

@@ -40,7 +40,7 @@ export default function TechDetailsSection() {
             Imanes en los extremos
           </h2>
           <p className='text-body'>
-            Los imanes ubicados en los extremos crean un campo polarizado entre dos puntos. Esta polaridad genera una leve tensión magnética que muchas personas perciben como circulación, descarga de estática o mayor presencia corporal. Desde el diseño, la lógica es clara: dos polos crean dirección. Y la dirección genera orden. Simbólicamente, es la integración de opuestos que encuentra un centro.
+            Los imanes ubicados en los extremos crean un campo polarizado entre dos puntos. Esta polaridad genera una leve tensión magnética que muchas personas perciben como circulación, descarga de estática o mayor presencia corporal. Desde el diseño, la lógica es clara: dos polos crean dirección y la dirección genera orden. Simbólicamente, es la integración de opuestos que encuentran un centro.
           </p>
         </div>
       </div>

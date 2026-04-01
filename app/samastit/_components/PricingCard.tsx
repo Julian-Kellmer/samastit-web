@@ -28,13 +28,13 @@ const PricingCard: React.FC<PricingCardProps> = ({
       className={`relative flex flex-col p-6 rounded-2xl border transition-all duration-300 group
       ${
         isHighlight
-          ? 'bg-neutral-900/80 border-red-600 shadow-[0_0_30px_rgba(220,38,38,0.2)]'
+          ? 'bg-neutral-900/80 border-primary shadow-[0_0_30px_rgba(220,38,38,0.2)]'
           : 'bg-neutral-900/40 border-white/10 hover:border-white/30 hover:bg-neutral-900/60'
       }
       backdrop-blur-sm
     `}>
       {isHighlight && (
-        <div className='absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full whitespace-nowrap'>
+        <div className='absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full whitespace-nowrap'>
           Recomendado
         </div>
       )}

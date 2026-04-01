@@ -1,8 +1,8 @@
-import HorizontalScrollSection from './sections/HorizontalScrollSection'
-import AboutSection from './sections/AboutSection'
-import AmuletosSection from './sections/AmuletosSection'
-import AshtangaSection from './sections/AshtangaSection'
-import MeliquinaSection from './sections/MeliquinaSection'
+import HorizontalScrollSection from './hero-sections/HorizontalScrollSection'
+import AboutSection from './hero-sections/AboutSection'
+import AmuletosSection from './hero-sections/AmuletosSection'
+import AshtangaSection from './hero-sections/AshtangaSection'
+import MeliquinaSection from './hero-sections/MeliquinaSection'
 
 export default function Home() {
   return (

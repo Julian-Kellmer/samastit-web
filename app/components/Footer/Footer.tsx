@@ -1,14 +1,16 @@
+'use client'
 import Link from 'next/link'
 import { FxLinkButton } from '../FxButton/FxLinkButton'
+import { FxActionButton } from '../FxButton/FxActionButton'
 
 export default function Footer() {
   return (
     <footer className='bg-zinc-950 text-white pt-20 pb-10 px-6 md:px-20 border-t border-white/10'>
       <div className='max-w-[1400px] mx-auto'>
         {/* Top Section */}
-        <div className='flex flex-col md:flex-row justify-between mb-20 gap-10 md:gap-0'>
+        <div className='flex flex-col  justify-between mb-20 gap-10 md:gap-0'>
           {/* Logo & CTA */}
-          <div className='flex flex-col items-start gap-10'>
+          <div className='flex justify-between  items-end gap-10'>
             <div className='w-[300px] md:w-[400px]'>
               <h1 className='text-4xl md:text-6xl font-black uppercase leading-sm tracking-tighter'>
                 Pablo
@@ -16,13 +18,18 @@ export default function Footer() {
                 Pirillo
               </h1>
             </div>
-            <FxLinkButton href='/contacto'>Contactame</FxLinkButton>
+            <FxActionButton
+              onClick={() =>
+                window.open('https://wa.me/+5491158044328', '_blank')
+              }>
+              Contactame
+            </FxActionButton>
           </div>
 
           {/* Navigation */}
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 text-lg font-pp font-medium'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 text-lg font-pp font-medium pt-16'>
             {/* Pages */}
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-4 flex-1'>
               <h3 className='text-white mb-2 text-[24px]'>Paginas</h3>
               <Link
                 href='/'
@@ -35,7 +42,7 @@ export default function Footer() {
                 Samastit
               </Link>
               <Link
-                href='/amuletos'
+                href='/joyas'
                 className='hover:text-white/70 transition-colors text-[16px]'>
                 Amuletos
               </Link>
@@ -45,14 +52,14 @@ export default function Footer() {
                 Meliquina
               </Link>
               <Link
-                href='/ashtanga'
+                href='/#ashtanga'
                 className='hover:text-white/70 transition-colors text-[16px]'>
                 Ashtanga
               </Link>
             </div>
 
             {/* Products & Services */}
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-4 flex-1  md:items-center ' > 
               <h3 className='text-white mb-2 text-[24px] '>
                 Productos y servicios
               </h3>
@@ -74,7 +81,7 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-4 flex-1 md:items-end'>
               <h3 className='text-white mb-2 text-[24px]'>Contacto</h3>
               <Link
                 href='https://instagram.com/samastit'

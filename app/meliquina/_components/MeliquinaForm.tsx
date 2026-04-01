@@ -17,7 +17,7 @@ type FormData = {
 }
 
 const TIPO_ESTADIA_OPTIONS = [
-  { value: 'retiro', label: 'Alquiler del espacio para retiro propio' },
+  { value: 'retiro', label: 'Alquiler espacio para retiro grupal' },
   { value: 'personal', label: 'Estadía personal' },
   { value: 'otro', label: 'Otro (especificar)' },
 ]
