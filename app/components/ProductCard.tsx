@@ -108,7 +108,7 @@ export default function ProductCard({
     <>
       <div className='flex flex-col gap-3 cursor-pointer transition-transform duration-300 hover:scale-105'>
         {/* Image */}
-        <div className='relative aspect-square w-full rounded-lg overflow-hidden'>
+        <div className='relative aspect-square w-full max-w-[300px] mx-auto md:max-w-none rounded-lg overflow-hidden'>
           {tag && (
             <div className='absolute top-3 left-3 px-3 py-1 bg-[#D97777] rounded-full z-10'>
               <span className='text-[10px] uppercase font-bold text-black block leading-none'>
@@ -139,7 +139,7 @@ export default function ProductCard({
               {isTruncated && (
                 <button
                   onClick={() => setModalOpen(true)}
-                  className='ml-1 text-red-600 underline underline-offset-2 text-sm hover:text-red-500 transition-colors'>
+                  className='ml-1 text-[#ffb852] underline underline-offset-2 text-sm hover:text-[#773200] transition-colors'>
                   ver más
                 </button>
               )}
@@ -149,7 +149,7 @@ export default function ProductCard({
           {price && (
             <div className='flex items-center justify-between mt-1'>
               <span className='text-sm font-mono text-white/80'>
-                ${price.toLocaleString('es-AR')}
+                
               </span>
               <FxActionButton
                 onClick={() => {
@@ -159,7 +159,7 @@ export default function ProductCard({
                   )
                 }}
                 disabled={false}>
-                Contactar
+                Consultar
               </FxActionButton>
             </div>
           )}

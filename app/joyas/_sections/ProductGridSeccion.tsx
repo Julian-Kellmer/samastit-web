@@ -129,7 +129,7 @@ export default function ProductGridSection() {
       </div>
 
       {/* Grid */}
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-12 w-full group/grid'>
+      <div className='grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 md:gap-x-12 md:gap-y-12 w-full group/grid px-4 md:px-0'>
         {/* Generate 9 Placeholder Cards */}
         {joyas.map((joya, i) => (
           <ProductCard

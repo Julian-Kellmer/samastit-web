@@ -58,7 +58,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
             className='flex items-start gap-3 text-sm text-neutral-300'>
             <svg
               className={`w-5 h-5 flex-shrink-0 ${
-                isHighlight ? 'text-red-500' : 'text-neutral-500'
+                isHighlight ? 'text-[#ffb852]' : 'text-neutral-500'
               }`}
               viewBox='0 0 24 24'
               fill='none'
@@ -78,7 +78,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         className={`block w-full text-center py-3 px-6 rounded-lg text-sm font-bold uppercase tracking-wide transition-colors duration-300
         ${
           isHighlight
-            ? 'bg-red-600 text-white hover:bg-red-700'
+            ? 'bg-[#ffb852] text-black hover:bg-[#773200] hover:text-white'
             : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
         }
       `}>

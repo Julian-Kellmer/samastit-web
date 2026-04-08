@@ -52,9 +52,9 @@ export default function AmuletosSection() {
 
         {/* Más Vendidos Section */}
         <div className='col-span-full md:col-start-2 md:col-end-8 flex flex-col gap-8 md:mt-0'>
-          <h3 className='text-h4 text-left'>Más Vendidos</h3>
+          <h3 className='text-h4 text-left'>Algunos de nuestros amuletos</h3>
 
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 w-full group/grid'>
+          <div className='grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-12 w-full group/grid px-4 md:px-0'>
             {masVendidos.map((joya, i) => (
               <ProductCard
                 key={i}

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function TechDetailsSection() {
   return (
-    <section className='col-span-full relative w-full py-32 overflow-hidden bg-black text-white h-[150svh]'>
+    <section className='col-span-full relative w-full py-32 overflow-hidden bg-black text-white h-[150svh] '>
       {/* Decorative Backgrounds specifically for this section */}
       <div className='absolute   bottom-[-40svh] right-0 w-[50vw] md:w-[40vw] h-full z-0 opacity-80 pointer-events-none'>
         <Image
@@ -13,7 +13,7 @@ export default function TechDetailsSection() {
           className='object-contain object-left opacity-25'
         />
       </div>
-      <div className='absolute top-[-40svh] left-0 w-[50vw] md:w-[40vw] h-full z-0 opacity-80 pointer-events-none'>
+      <div className='absolute top-[-60svh] md:top-[-40svh] left-0 w-[50vw] md:w-[40vw] h-full z-0 opacity-80 pointer-events-none'>
         <Image
           src='/images/recortada2.png'
           alt='Background Right'

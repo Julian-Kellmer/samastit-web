@@ -37,6 +37,13 @@ export default function MeliquinaDesktop({ items }: Props) {
         <h2 className='text-[5rem] xl:text-[7rem] leading-none text-primary font-bold uppercase'>
           Espacios <br /> Meliquina
         </h2>
+        <a
+          href='https://www.instagram.com/espaciomeliquina'
+          target='_blank'
+          rel='noreferrer'
+          className='text-body text-white/50 hover:text-white/80 transition-colors text-sm mt-2'>
+          @espaciomeliquina
+        </a>
       </div>
 
       {/* ── Right — scrollable content stack ───────────────── */}

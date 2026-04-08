@@ -215,9 +215,16 @@ export default function AshtangaSection() {
       <div className='layout-grid'>
         {/* Layout: constrained to col 2-8 as requested */}
         <div className='col-span-full md:col-start-2 md:col-end-8 flex flex-col gap-12'>
-          <h2 className='text-display text-red-600 uppercase font-bold tracking-tighter leading-none'>
+          <h2 className='text-display text-primary uppercase font-bold tracking-tighter leading-none'>
             ASHTANGA
           </h2>
+          <a
+            href='https://www.instagram.com/ashtanga_espacio'
+            target='_blank'
+            rel='noreferrer'
+            className='text-body text-white/50 hover:text-white/80 transition-colors text-sm -mt-8'>
+            @ashtanga_espacio
+          </a>
 
           {/* Accordion Component */}
           <div className='w-full '>

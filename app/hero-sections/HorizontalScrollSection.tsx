@@ -62,7 +62,7 @@ export default function HorizontalScrollSection() {
         className='flex flex-col md:flex-row md:flex-nowrap w-full md:w-[300vw] h-auto md:h-full'>
         {/* Panel 1: Hero Title + Description */}
         <div className='relative panel w-full h-screen md:w-[120svw] md:h-screen flex-shrink-0 flex items-center justify-center p-8 border-b md:border-b-0 border-white/5'>
-          <div className='relative z-10 w-full h-[80%] grid grid-cols-1 md:grid-cols-2 gap-12 items-start pt-16 md:pt-0 md:items-end'>
+          <div className='relative z-10 w-full h-[80%] grid grid-cols-1 md:grid-cols-2 gap-12 items-start pt-10 md:pt-0 md:items-end'>
             <div className='relative z-20 flex flex-col justify-start md:justify-end'>
               <h1 className='text-display text-primary uppercase  '>
                 GUÍA
@@ -72,17 +72,25 @@ export default function HorizontalScrollSection() {
               <p className='text-body px-3'>La práctica de intervenir</p>
             </div>
           </div>
-          <div className='absolute flex justify-end items-end top-0 left-0 w-full h-screen pointer-events-none'>
-            <div className='image-contain z-0 relative h-[80svh] md:h-screen w-full md:w-[65svw] bg-gradient-to-b from-background/50 to-transparent'>
+          <div className='absolute flex justify-end items-end top-0 left-0 w-full h-[120svh] md:h-screen pointer-events-none'>
+            <div className='image-contain z-0 relative h-screen md:h-screen w-full md:w-[65svw] bg-gradient-to-b from-background/50 to-transparent'>
+              {/* Mobile */}
               <Image
-                src='/PabloHero.png'
+                src='/images/PabloSinCuerpo.png'
                 alt='Hero Image'
                 fill
-                className='object-contain object-bottom md:object-right-bottom sepia'
+                className='object-contain object-bottom md:hidden '
+              />
+              {/* Desktop */}
+              <Image
+                src='/images/PabloSinCuerpo.jpeg'
+                alt='Hero Image'
+                fill
+                className='hidden md:block object-contain md:object-right-bottom'
               />
               {/* Gradientes para difuminar bordes en mobile */}
-              <div className='absolute top-0 left-0 w-full h-[30%] bg-gradient-to-b from-[#030404] to-transparent md:hidden pointer-events-none' />
-              <div className='absolute bottom-0 left-0 w-full h-[30%] bg-gradient-to-t from-[#030404] to-transparent md:hidden pointer-events-none' />
+              <div className='absolute top-0 left-0 w-full h-[15%] bg-gradient-to-b from-[#030404] to-transparent md:hidden pointer-events-none' />
+              <div className='absolute bottom-0 left-0 w-full h-[15%] bg-gradient-to-t from-[#030404] to-transparent md:hidden pointer-events-none' />
             </div>
           </div>
         </div>
@@ -129,11 +137,11 @@ export default function HorizontalScrollSection() {
             onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setIsModalOpen(false)}
-              className='fixed bottom-6 right-6 md:bottom-12 md:right-12 z-[110] flex items-center justify-center gap-2 px-6 py-3 border-2 border-red-600 text-red-600 uppercase text-sm font-bold tracking-widest bg-zinc-900/80 backdrop-blur-md rounded-full hover:bg-red-600 hover:text-white transition-all duration-300 shadow-lg shadow-black/50'>
+              className='fixed bottom-6 right-6 md:bottom-12 md:right-12 z-[110] flex items-center justify-center gap-2 px-6 py-3 border-2 border-[#ffb852] text-[#ffb852] uppercase text-sm font-bold tracking-widest bg-zinc-900/80 backdrop-blur-md rounded-full hover:bg-[#ffb852] hover:text-black transition-all duration-300 shadow-lg shadow-black/50'>
               <span>Cerrar</span>
               <span className='text-xl leading-none mb-[2px]'>&times;</span>
             </button>
-            <h3 className='text-h4 uppercase mb-6 text-red-600'>Biografía</h3>
+            <h3 className='text-h4 uppercase mb-6 text-primary'>Biografía</h3>
             <div className='text-body space-y-4 text-white/80 whitespace-pre-line'>
               {/* Aquí irá el texto de la biografía que se pegue luego */}
               Soy Pablo Pirillo. Nací en Buenos Aires en 1975. Desde chico tuve

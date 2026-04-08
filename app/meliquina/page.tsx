@@ -22,9 +22,16 @@ const page = () => {
     <section className='min-h-screen bg-black text-white'>
       <div className='container flex flex-col items-start px-4  text-center pt-42 md:pt-32 justify-center'>
         <h1 className='text-display  text-primary font-bold mb-4'>MELIQUINA</h1>
-        <p className='text-body text-xl text-gray-300 mb-12 md:px-2 text-start'>
+        <p className='text-body text-xl text-gray-300 mb-4 md:px-2 text-start'>
           Un espacio donde la naturaleza marca el ritmo
         </p>
+        <a
+          href='https://www.instagram.com/espaciomeliquina'
+          target='_blank'
+          rel='noreferrer'
+          className='text-body text-white/50 hover:text-white/80 transition-colors text-sm mb-12'>
+          @espaciomeliquina
+        </a>
       </div>
 
       {/* Marquee Section */}
