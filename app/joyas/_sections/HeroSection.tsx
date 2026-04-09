@@ -45,7 +45,7 @@ export default function HeroSection() {
           </div>
 
           <div className="text-h4 w-full">
-            <TextRevealOnScroll text="Es un oligoelemento esencial, involucrado en la formación del tejido conectivo y distintos procesos del organismo. Además, posee propiedades antibacterianas ampliamente estudiadas." />
+            <TextRevealOnScroll text="Es un oligoelemento esencial involucrado en la formación del tejido conectivo y distintos procesos del organismo. Además, posee propiedades antibacterianas ampliamente estudiadas." />
           </div>
 
           <div className="text-h4 w-full">
@@ -53,7 +53,7 @@ export default function HeroSection() {
           </div>
 
           <div className="text-h4 w-full">
-            <TextRevealOnScroll text="En Samastit, el cobre no es decorativo. Es un material elegido por su capacidad de conducción." />
+            <TextRevealOnScroll text="En Samastit el cobre no es decorativo. Es un material elegido por su capacidad de conducción." />
           </div>
 
           {/* Cierre poético */}

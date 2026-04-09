@@ -33,7 +33,7 @@ export default function MeliquinaDesktop({ items }: Props) {
     <div ref={containerRef} className='flex flex-row w-full text-white'>
 
       {/* ── Left — pinned title ─────────────────────────────── */}
-      <div ref={leftRef} className='w-[40%] shrink-0 flex items-start pt-4 pr-12'>
+      {/* <div ref={leftRef} className='w-[40%] shrink-0 flex items-start pt-4 pr-12'>
         <h2 className='text-[5rem] xl:text-[7rem] leading-none text-primary font-bold uppercase'>
           Espacios <br /> Meliquina
         </h2>
@@ -44,7 +44,7 @@ export default function MeliquinaDesktop({ items }: Props) {
           className='text-body text-white/50 hover:text-white/80 transition-colors text-sm mt-2'>
           @espaciomeliquina
         </a>
-      </div>
+      </div> */}
 
       {/* ── Right — scrollable content stack ───────────────── */}
       <div className='flex-1 flex flex-col'>

@@ -41,17 +41,23 @@ export default function AboutSection() {
   }, [])
 
   const imagesSamastit = [
-    '/images/pablo12.jpg',
-    '/images/pablo1.jpg',
-    '/images/pablo2.jpg',
+
+    '/images/Principal.jpeg',
+    '/images/pablo12.jpeg',
+    // '/images/pablo2.jpg',
+    '/images/Cambio1.jpeg',
     '/images/pablo3.jpg',
+    '/images/pablo100.jpeg',
+    '/images/Color1.jpeg',
     '/images/pablo4.jpg',
     '/images/pablo5.jpg',
     '/images/pablo6.jpg',
+    '/images/Color3.jpeg',
     '/images/pablo7.jpg',
     '/images/pablo8.jpg',
     '/images/pablo9.jpg',
     '/images/pablo10.jpg',
+    '/images/Color2.jpeg',
     '/images/pablo11.jpg',
   ]
 

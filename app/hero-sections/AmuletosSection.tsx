@@ -4,26 +4,26 @@ import { FxLinkButton } from '../components/FxButton/FxLinkButton'
 import ProductCard from '../components/ProductCard'
 
 const masVendidos = [
-  {
-    title: 'Chacana',
+   {
+    title: 'Pulcera trenzada',
     description:
-      'Puente · Equilibrio · Integración.\n\nAmuleto de cobre puro con doble imán y salto de chispa.\n\nLa chacana es la cruz andina que une cielo, tierra y mundo interior.\n\nSimboliza el equilibrio entre los planos y el orden del universo. Diseñada para acompañar procesos de integración y coherencia interna.',
-    price: 60000,
-    img: '/joyas/joya18.jpg',
+      'Unión · Resiliencia.\n\nPulsera de cobre macizo trenzado con imanes.\n\nEl trenzado simboliza la fuerza que surge de la unión.',
+    price: 90000,
+    img: '/joyas/joya6.png',
   },
-  {
-    title: 'Lilith',
-    description:
-      'Autonomía · Sabiduría instintiva.\n\nTallado en cobre puro con doble imán y salto de chispa.\n\nLilith representa la fuerza original, la autonomía y la voz instintiva no domesticada.\n\nLa serpiente simboliza conocimiento, renovación y energía vital. Un amuleto para quienes eligen escucharse y afirmarse.',
-    price: 60000,
-    img: '/joyas/joya19.jpg',
-  },
-  {
+    {
     title: 'Patron 369',
     description:
-      'Intención · Foco · Voluntad.\nAnillo-sello de cobre puro con doble imán.',
+      'Intención · Foco · Voluntad.\n\nAnillo-sello de cobre puro con doble imán.\n\nEl patrón 369 encuadra la Flor de la Vida, concentrando la energía en un punto.\n\nInspirado en la idea de que ciertos números organizan la realidad. Diseñado para anclar intención y dirección.',
     price: 66000,
     img: '/joyas/joya3.png',
+  },
+   {
+    title: 'Huellas',
+    description:
+      'Identidad · Vínculo.\n\nAmuleto de cobre puro con doble imán, diseñado para grabar una huella dactilar.\n\nPuede llevar la huella propia como símbolo de autoafirmación o la de alguien querido como vínculo consciente.\n\nUna extensión simbólica de la identidad.',
+    price: 90000,
+    img: '/joyas/joya4.png',
   },
 ]
 
@@ -52,7 +52,6 @@ export default function AmuletosSection() {
 
         {/* Más Vendidos Section */}
         <div className='col-span-full md:col-start-2 md:col-end-8 flex flex-col gap-8 md:mt-0'>
-          <h3 className='text-h4 text-left'>Algunos de nuestros amuletos</h3>
 
           <div className='grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-12 w-full group/grid px-4 md:px-0'>
             {masVendidos.map((joya, i) => (

@@ -75,7 +75,7 @@ const ImageMarquee: React.FC<ImageMarqueeProps> = ({
                 sizes="(max-width: 768px) 50vw, 30vw"
                 src={src}
                 alt=''
-                className='grayscale-100 object-cover rounded-md'
+                className=' object-cover rounded-md'
                 draggable={false}
               />
             </div>

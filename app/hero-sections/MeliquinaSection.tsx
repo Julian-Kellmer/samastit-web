@@ -33,8 +33,7 @@ export default function MeliquinaSection() {
           <div className='flex flex-col md:flex-row  justify-between items-end w-full'>
             <div className='flex flex-col  max-w-4xl'>
               <h3 className='text-body '>
-                No se trata de conquistar la montaña, sino de permitir que la
-                montaña te conquiste a ti
+               La naturaleza como maestra
               </h3>
               
             </div>

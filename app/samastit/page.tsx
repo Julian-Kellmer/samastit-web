@@ -38,7 +38,7 @@ const page = () => {
                   </li>
                   <li className='flex items-start'>
                     <span className='text-primary mr-3'>✦</span>
-                    <p>La secuencia se adapta en tiempo real, permitiendo ordenar, profundizar o reorganizar la práctica.</p>
+                    <p>La secuencia se adapta en tiempo real permitiendo ordenar, profundizar o reorganizar la práctica.</p>
                   </li>
                   <li className='flex items-start'>
                     <span className='text-primary mr-3'>✦</span>
@@ -65,7 +65,7 @@ const page = () => {
               <div>
                 <h3 className='text-h5 mb-3 text-primary'>1. Proceso individual</h3>
                 <p className='text-neutral-300 font-light leading-relaxed text-h6 pl-6'>
-                  Un espacio personalizado para iniciar o reordenar la práctica, con seguimiento y ajustes según tu proceso.
+                  Un espacio personalizado para iniciar o reordenar la práctica con seguimiento y ajustes según tu proceso.
                 </p>
               </div>
               <div>

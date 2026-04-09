@@ -74,7 +74,7 @@ export default function Footer() {
                 Amuletos Disponibles
               </Link>
               <Link
-                href='/videos'
+                href='/#ashtanga'
                 className='hover:text-white/70 transition-colors text-[16px]'>
                 Curso Ashtanga
               </Link>

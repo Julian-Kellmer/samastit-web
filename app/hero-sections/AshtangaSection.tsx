@@ -42,7 +42,7 @@ export default function AshtangaSection() {
                 introductorio. Es un material de estudio para comprender la
                 práctica desde adentro.
               </p>
-              <div className=''>
+              <div className=' md:hidden'>
                 <FxActionButton
                   onClick={() => setActiveItem('price')}
                   disabled={false}>
