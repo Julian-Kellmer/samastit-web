@@ -32,12 +32,12 @@ export default function HeroSection() {
           </h2>
 
           {/* Cita */}
-          <div className="text-h4 w-full italic">
+          {/* <div className="text-h4 w-full italic">
             <TextRevealOnScroll
               text="El cobre no cura. Es un medio conductor."
               wordClassName="opacity-50"
             />
-          </div>
+          </div> */}
 
           {/* Cuerpo */}
           <div className="text-h4 w-full">

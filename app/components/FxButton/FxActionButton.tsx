@@ -11,15 +11,14 @@ type FxActionButtonProps = {
 export function FxActionButton({
   children,
   onClick,
-  disabled
+  disabled,
 }: FxActionButtonProps) {
   return (
     <button
-      type="button"
+      type='button'
       onClick={onClick}
       disabled={disabled}
-      className="bg-transparent border-none p-0 cursor-pointer"
-    >
+      className='bg-transparent border-none p-0 cursor-pointer'>
       <FxButtonBase>{children}</FxButtonBase>
     </button>
   )

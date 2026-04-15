@@ -114,15 +114,24 @@ export default function HorizontalScrollSection() {
         </div>
 
         {/* Panel 3: Title + ImageMarquee */}
-        <div className='z-10 panel w-full min-h-[50vh] md:w-screen md:h-[80svh] flex-shrink-0 flex flex-col justify-center relative'>
+        <div className='z-10 panel w-full min-h-[50vh] md:w-screen md:h-[80svh] flex-shrink-0 flex flex-col justify-center relative '>
           <div className='layout-grid w-full h-full text-center z-10 px-4'>
             <div className='col-span-full md:col-start-2 md:col-span-6 h-full flex flex-col justify-center items-center gap-12 py-16 md:py-0'>
               <h2 className='text-display text-primary'>SAMASTIT</h2>
               <h4 className='text-h6 px-4'>
-                Sabiduría milenaria, un camino porpio para acceder al estado de
+                Sabiduría milenaria, un camino propio para acceder al estado de
                 yoga
               </h4>
             </div>
+          </div>
+          <div className='absolute bottom-[-30%] opacity-25 right-80 w-1/2 h-auto hidden md:block'>
+            <Image
+              src='/images/pablo12.jpeg'
+              alt='Hero Image'
+              width={500}
+              height={500}
+              className='object-contain object-bottom'
+            />
           </div>
         </div>
       </div>

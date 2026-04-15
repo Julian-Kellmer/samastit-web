@@ -30,7 +30,7 @@ export default function MeliquinaSection() {
             MELIQUINA
           </h2>
 
-          <div className='flex flex-col md:flex-row  justify-between items-end w-full'>
+          <div className='flex flex-col md:flex-row  justify-between md:items-end items-start w-full'>
             <div className='flex flex-col  max-w-4xl'>
               <h3 className='text-body '>
                La naturaleza como maestra
