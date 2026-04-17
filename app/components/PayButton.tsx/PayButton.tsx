@@ -2,11 +2,11 @@
 import styles from './style.module.scss'
 export function PayButton({
   title,
-  price,
+  
   text,
 }: {
   title: string
-  price: number
+  
   text: string
 }) {
   const handlePay = async () => {
@@ -14,7 +14,7 @@ export function PayButton({
       const res = await fetch('/api/mp/create-preference', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, price }),
+        body: JSON.stringify({ title }),
       })
 
       const data = await res.json()

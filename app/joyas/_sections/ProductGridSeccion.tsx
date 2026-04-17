@@ -135,7 +135,6 @@ export default function ProductGridSection() {
             key={i}
             title={joya.title}
             description={joya.description}
-            // price={joya.price}
             img={joya.img}
           />
         ))}

@@ -2,7 +2,6 @@ import React from 'react'
 
 interface PricingCardProps {
   title: string
-  price: string
   features: string[]
   isHighlight?: boolean
   buttonText?: string
@@ -11,7 +10,6 @@ interface PricingCardProps {
 
 const PricingCard: React.FC<PricingCardProps> = ({
   title,
-  price,
   features,
   isHighlight = false,
   buttonText = 'Contactar',
@@ -43,11 +41,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         <h3 className='text-xl text-neutral-400 font-medium mb-2'>{title}</h3>
         <div className='flex items-baseline gap-1'>
           <span className='text-3xl md:text-4xl font-bold text-white'>
-            {price}
           </span>
-          {price !== 'Consultar' && (
-            <span className='text-sm text-neutral-500'>/mes</span>
-          )}
         </div>
       </div>
 

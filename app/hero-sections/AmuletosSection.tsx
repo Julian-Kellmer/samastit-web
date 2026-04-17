@@ -8,21 +8,18 @@ const masVendidos = [
     title: 'Pulcera trenzada',
     description:
       'Unión · Resiliencia.\n\nPulsera de cobre macizo trenzado con imanes.\n\nEl trenzado simboliza la fuerza que surge de la unión.',
-    price: 90000,
     img: '/joyas/joya6.png',
   },
     {
     title: 'Patron 369',
     description:
       'Intención · Foco · Voluntad.\n\nAnillo-sello de cobre puro con doble imán.\n\nEl patrón 369 encuadra la Flor de la Vida, concentrando la energía en un punto.\n\nInspirado en la idea de que ciertos números organizan la realidad. Diseñado para anclar intención y dirección.',
-    price: 66000,
     img: '/joyas/joya3.png',
   },
    {
     title: 'Huellas',
     description:
       'Identidad · Vínculo.\n\nAmuleto de cobre puro con doble imán, diseñado para grabar una huella dactilar.\n\nPuede llevar la huella propia como símbolo de autoafirmación o la de alguien querido como vínculo consciente.\n\nUna extensión simbólica de la identidad.',
-    price: 90000,
     img: '/joyas/joya4.png',
   },
 ]
@@ -59,7 +56,6 @@ export default function AmuletosSection() {
                 key={i}
                 title={joya.title}
                 description={joya.description}
-                price={joya.price}
                 img={joya.img}
               />
             ))}
