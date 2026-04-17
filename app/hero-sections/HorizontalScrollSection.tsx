@@ -61,7 +61,7 @@ export default function HorizontalScrollSection() {
         ref={track}
         className='flex flex-col md:flex-row md:flex-nowrap w-full md:w-[300vw] h-auto md:h-full'>
         {/* Panel 1: Hero Title + Description */}
-        <div className='relative panel w-full h-screen md:w-[120svw] md:h-screen flex-shrink-0 flex items-center justify-center p-8 border-b md:border-b-0 border-white/5'>
+        <div className='relative panel w-full h-screen md:w-[120svw] md:h-screen flex-shrink-0 flex items-center justify-center p-8 '>
           <div className='relative z-10 w-full h-[80%] grid grid-cols-1 md:grid-cols-2 gap-12 items-start pt-10 md:pt-0 md:items-end'>
             <div className='relative z-20 flex flex-col justify-start md:justify-end'>
               <h1 className='text-display text-primary uppercase  '>
@@ -76,14 +76,14 @@ export default function HorizontalScrollSection() {
             <div className='image-contain z-0 relative h-screen md:h-screen w-full md:w-[65svw] bg-gradient-to-b from-background/50 to-transparent'>
               {/* Mobile */}
               <Image
-                src='/images/PabloSinCuerpo.png'
+                src='/images/PabloSinCuerpoMobile.png'
                 alt='Hero Image'
                 fill
                 className='object-contain object-bottom md:hidden '
               />
               {/* Desktop */}
               <Image
-                src='/images/PabloSinCuerpo.jpeg'
+                src='/images/PabloSinCuerpoWeb.png'
                 alt='Hero Image'
                 fill
                 className='hidden md:block object-contain md:object-right-bottom'
@@ -96,7 +96,7 @@ export default function HorizontalScrollSection() {
         </div>
 
         {/* Panel 2: Text + Modal Button */}
-        <div className='p-8 md:p-16 panel w-full min-h-screen md:w-[80svw] md:h-screen flex-shrink-0 flex flex-col items-start justify-center border-b md:border-b-0 border-white/5'>
+        <div className='p-8 md:p-16 panel w-full min-h-screen md:w-[80svw] md:h-screen flex-shrink-0 flex flex-col items-start justify-center '>
           <div className='py-8 md:py-16 flex-1 flex flex-col items-start justify-center w-full max-w-5xl text-start gap-12'>
             <p className='text-h4 text-2xl md:text-4xl'>
               Después de 27 años practicando y enseñando yoga, hoy comparto una
@@ -124,12 +124,12 @@ export default function HorizontalScrollSection() {
               </h4>
             </div>
           </div>
-          <div className='absolute bottom-[-30%] opacity-25 right-80 w-1/2 h-auto hidden md:block'>
+          <div className='absolute bottom-[-20%] opacity-25 right-50 w-1/2 h-auto hidden md:block '>
             <Image
               src='/images/pablo12.jpeg'
               alt='Hero Image'
-              width={500}
-              height={500}
+              width={400}
+              height={400}
               className='object-contain object-bottom'
             />
           </div>

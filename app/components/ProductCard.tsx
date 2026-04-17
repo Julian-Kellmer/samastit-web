@@ -7,7 +7,7 @@ import Image from 'next/image'
 interface ProductCardProps {
   title: string
   description?: string
-  price?: number
+  // price?: number
   tag?: string
   children?: React.ReactNode
   img?: string
@@ -16,7 +16,7 @@ interface ProductCardProps {
 function ProductModal({
   title,
   description,
-  price,
+  // price,
   tag,
   img,
   children,
@@ -66,10 +66,10 @@ function ProductModal({
             <p className='text-body text-white/70 text-sm'>{description}</p>
           )}
 
-          {price && (
+          {/* {price && ( */}
             <div className='flex items-center justify-between mt-2'>
               <span className='text-sm font-mono text-white/80'>
-                ${price.toLocaleString('es-AR')}
+                {/* ${price.toLocaleString('es-AR')} */}
               </span>
               <FxActionButton
                 onClick={() => {
@@ -82,7 +82,7 @@ function ProductModal({
                 Contactar
               </FxActionButton>
             </div>
-          )}
+          {/* )} */}
         </div>
       </div>
     </div>
@@ -92,7 +92,7 @@ function ProductModal({
 export default function ProductCard({
   title,
   description,
-  price,
+  // price,
   tag,
   children,
   img,
@@ -146,7 +146,7 @@ export default function ProductCard({
             </p>
           )}
 
-          {price && (
+          {/* {price && ( */}
             <div className='flex items-center justify-between mt-1'>
               <span className='text-sm font-mono text-white/80'>
                 
@@ -162,7 +162,7 @@ export default function ProductCard({
                 Consultar
               </FxActionButton>
             </div>
-          )}
+          {/* )} */}
         </div>
       </div>
 
@@ -170,7 +170,7 @@ export default function ProductCard({
         <ProductModal
           title={title}
           description={description}
-          price={price}
+          // price={price}
           tag={tag}
           img={img}
           onClose={() => setModalOpen(false)}>
